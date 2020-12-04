@@ -166,7 +166,7 @@ public class MoreCraft {
 				// Register Entity Spawners
 				// func_242575_a(Entity Classification, new Spawners(Entity
 				// Type, Spawn Chance Weight, Minimum Spawned, Maximum Spawned))
-				event.getSpawns().func_242575_a(EntityClassification.MONSTER, new Spawners(Entities.WARLOCK, 1, 1, 1));
+				//event.getSpawns().func_242575_a(EntityClassification.MONSTER, new Spawners(Entities.WARLOCK, 1, 1, 1));
 			}
 		}
 
