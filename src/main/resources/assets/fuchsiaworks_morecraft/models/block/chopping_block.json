@@ -1,0 +1,26 @@
+{
+    "parent": "block/block",
+    "textures": {
+        "particle": "minecraft:block/polished_granite",
+    	"bottom": "minecraft:block/oak_planks",
+    	"top": "minecraft:block/polished_granite",
+    	"north": "minecraft:block/oak_planks",
+    	"south": "minecraft:block/oak_planks",
+    	"west": "minecraft:block/oak_planks",
+    	"east": "minecraft:block/oak_planks"
+    },
+    "elements": [
+        {
+            "from": [ 1, 0, 1 ],
+            "to": [ 15, 12, 15 ],
+            "faces": {
+                "down":  { "uv": [ 1, 1, 15, 15 ], "texture": "#bottom", "cullface": "down" },
+                "up":    { "uv": [ 1, 1, 15, 15 ], "texture": "#top" },
+                "north": { "uv": [ 1, 0, 15, 12 ], "texture": "#north" },
+                "south": { "uv": [ 1, 0, 15, 12 ], "texture": "#south" },
+                "west":  { "uv": [ 1, 0, 15, 12 ], "texture": "#west" },
+                "east":  { "uv": [ 1, 0, 15, 12 ], "texture": "#east" }
+            }
+        }
+    ]
+}

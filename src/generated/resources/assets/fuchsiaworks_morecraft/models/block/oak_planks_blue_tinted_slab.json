@@ -1,0 +1,9 @@
+{
+  "parent": "fuchsiaworks_morecraft:block/slab_tint",
+  "textures": {
+    "bottom": "minecraft:block/oak_planks",
+    "top": "minecraft:block/oak_planks",
+    "side": "minecraft:block/oak_planks",
+    "tint": "fuchsiaworks_morecraft:block/blue_tint"
+  }
+}

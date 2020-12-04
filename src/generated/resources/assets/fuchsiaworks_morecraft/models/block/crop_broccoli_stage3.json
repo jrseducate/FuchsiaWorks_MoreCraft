@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "fuchsiaworks_morecraft:block/crop_broccoli_stage3"
+  }
+}

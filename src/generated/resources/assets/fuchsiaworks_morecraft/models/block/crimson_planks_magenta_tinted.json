@@ -1,0 +1,7 @@
+{
+  "parent": "fuchsiaworks_morecraft:block/cube_all_tint",
+  "textures": {
+    "all": "minecraft:block/crimson_planks",
+    "tint": "fuchsiaworks_morecraft:block/magenta_tint"
+  }
+}

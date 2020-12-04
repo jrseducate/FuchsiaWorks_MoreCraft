@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "fuchsiaworks_morecraft:item/cooked_beetroot_diced"
+  }
+}

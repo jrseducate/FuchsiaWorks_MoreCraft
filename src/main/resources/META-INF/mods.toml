@@ -1,0 +1,22 @@
+modLoader="javafml" #mandatory
+loaderVersion="[33,)"
+license="FuchsiaWorks MoreCraft License"
+#issueTrackerURL="https://github.com/Vazkii/Botania/issues" #optional
+#displayURL="https://botaniamod.net" #optional
+
+[[mods]]
+modId="fuchsiaworks_morecraft"
+version="${file.jarVersion}"
+displayName="FuchsiaWorks MoreCraft"
+authors="FuchsiaDaddy" #optional
+description='''
+What you love about Minecraft, and More!'''
+logoFile="logo.png" #optional
+credits="Credit to Kaitlyn and Castro for making some awesome looking assets" #optional
+
+[[dependencies.fuchsiaworks_morecraft]]
+modId="forge"
+mandatory=true
+versionRange="[33,)"
+ordering="NONE"
+side="BOTH"

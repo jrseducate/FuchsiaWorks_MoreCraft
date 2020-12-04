@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "fuchsiaworks_morecraft:block/crimson_planks_cyan_tinted_slab"
+    },
+    "type=double": {
+      "model": "fuchsiaworks_morecraft:block/crimson_planks_cyan_tinted"
+    },
+    "type=top": {
+      "model": "fuchsiaworks_morecraft:block/crimson_planks_cyan_tinted_slab_top"
+    }
+  }
+}

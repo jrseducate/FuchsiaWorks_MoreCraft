@@ -1,0 +1,9 @@
+{
+  "parent": "fuchsiaworks_morecraft:block/outer_stairs_tint",
+  "textures": {
+    "bottom": "minecraft:block/crimson_planks",
+    "top": "minecraft:block/crimson_planks",
+    "side": "minecraft:block/crimson_planks",
+    "tint": "fuchsiaworks_morecraft:block/gray_tint"
+  }
+}

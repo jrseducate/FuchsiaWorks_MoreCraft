@@ -1,0 +1,15 @@
+{
+  "type": "fuchsiaworks_morecraft:basic_crafting_block",
+  "crafting_type": "chopping_block",
+  "ingredient": {
+    "item": "minecraft:potato",
+    "count": 1
+  },
+  "results": [
+    {
+      "item": "fuchsiaworks_morecraft:potato_diced",
+      "count": 4
+    }
+  ],
+  "hits": 5
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "fuchsiaworks_morecraft:block/acacia_planks_lime_tinted_slab"
+    },
+    "type=double": {
+      "model": "fuchsiaworks_morecraft:block/acacia_planks_lime_tinted"
+    },
+    "type=top": {
+      "model": "fuchsiaworks_morecraft:block/acacia_planks_lime_tinted_slab_top"
+    }
+  }
+}

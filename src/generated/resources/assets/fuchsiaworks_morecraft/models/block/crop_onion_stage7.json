@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "fuchsiaworks_morecraft:block/crop_onion_stage7"
+  }
+}

@@ -1,0 +1,26 @@
+{
+    "parent": "block/block",
+    "textures": {
+        "particle": "minecraft:block/oak_planks",
+    	"bottom": "minecraft:block/oak_planks",
+    	"top": "minecraft:block/oak_planks",
+    	"north": "minecraft:block/oak_planks",
+    	"south": "minecraft:block/oak_planks",
+    	"west": "minecraft:block/oak_planks",
+    	"east": "minecraft:block/oak_planks"
+    },
+    "elements": [
+        {
+            "from": [ 2, 0, 2 ],
+            "to": [ 14, 12, 14 ],
+            "faces": {
+                "down":  { "uv": [ 2, 2, 14, 14 ], "texture": "#bottom", "cullface": "down" },
+                "up":    { "uv": [ 2, 2, 14, 14 ], "texture": "#top" },
+                "north": { "uv": [ 2, 0, 14, 12 ], "texture": "#north" },
+                "south": { "uv": [ 2, 0, 14, 12 ], "texture": "#south" },
+                "west":  { "uv": [ 2, 0, 14, 12 ], "texture": "#west" },
+                "east":  { "uv": [ 2, 0, 14, 12 ], "texture": "#east" }
+            }
+        }
+    ]
+}

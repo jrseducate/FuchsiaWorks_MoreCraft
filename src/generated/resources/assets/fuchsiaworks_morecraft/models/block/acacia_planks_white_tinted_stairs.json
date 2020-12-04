@@ -1,0 +1,9 @@
+{
+  "parent": "fuchsiaworks_morecraft:block/stairs_tint",
+  "textures": {
+    "bottom": "minecraft:block/acacia_planks",
+    "top": "minecraft:block/acacia_planks",
+    "side": "minecraft:block/acacia_planks",
+    "tint": "fuchsiaworks_morecraft:block/white_tint"
+  }
+}
