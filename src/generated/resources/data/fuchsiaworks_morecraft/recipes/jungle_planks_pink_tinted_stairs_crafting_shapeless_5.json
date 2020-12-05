@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:pink_dye"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:jungle_stairs"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:jungle_stairs"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:jungle_stairs"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:jungle_stairs"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:jungle_stairs"
+    }
+  ],
+  "result": {
+    "item": "fuchsiaworks_morecraft:jungle_planks_pink_tinted_stairs",
+    "count": 5
+  }
+}

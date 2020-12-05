@@ -2,14 +2,16 @@ package com.fuchsiaworks.morecraft.block;
 
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
+import com.fuchsiaworks.morecraft.JsonBuilder;
 import com.fuchsiaworks.morecraft.MoreCraft;
+import com.fuchsiaworks.morecraft.Utils;
 import com.fuchsiaworks.morecraft.data_gen.JsonDataGenerator;
 import com.fuchsiaworks.morecraft.data_gen.JsonDataGenerator.JsonDataProvider;
-import com.google.gson.JsonObject;
 
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.AbstractBlock.Properties;
@@ -41,6 +43,21 @@ public class ColoredBlockHelper {
 		ORANGE("orange"),
 		WHITE("white"),
 		YELLOW("yellow");
+		
+		public static HashMap<String, Color> lookupMap = Utils.Init(() -> {
+			HashMap<String, Color> lookupMap = new HashMap<>();
+			Color[] colors = Color.values();
+			
+			for(int i = 0; i < colors.length; i++) {
+				lookupMap.put(colors[i].name, colors[i]);
+			}
+			
+			return lookupMap;
+		});
+		
+		public static Color GetColor(String name) {
+			return lookupMap.get(name);
+		}
 		
 		public String name;
 		
@@ -110,6 +127,10 @@ public class ColoredBlockHelper {
 	public Block getBlock(Color color) {
 		return blocks[color.ordinal()];
 	}
+	
+	public Block getBlock(String color) {
+		return getBlock(Color.GetColor(color));
+	}
 
 	public void eachBlock(BiConsumer<Block, String> callback) {
 		for (Color colorEnum : Color.values()) {
@@ -125,6 +146,10 @@ public class ColoredBlockHelper {
 	
 	public Item getItem(Color color) {
 		return items[color.ordinal()];
+	}
+	
+	public Item getItem(String color) {
+		return getItem(Color.GetColor(color));
 	}
 
 	public void eachItem(BiConsumer<Item, String> callback) {
@@ -202,37 +227,33 @@ public class ColoredBlockHelper {
 			
 			// BLOCKSTATES
 			dataProviders.add(new JsonDataProvider(JsonDataGenerator.ASSETS_BLOCKSTATES_PATH + id + ".json", () -> {
-				JsonObject json = new JsonObject();
-				
-				JsonObject variants = new JsonObject();
-				
-				JsonObject variant = new JsonObject();
-				variant.addProperty("model", MoreCraft.MOD_ID + ":block/" + id);
-				variants.add("", variant);
-				
-				json.add("variants", variants);
-				
-				return json;
+				return JsonBuilder.newObject((json) -> {
+					json.addObject("variants", (variants) -> {
+						variants.addObject("", (variant) -> {
+							variant.add("model", MoreCraft.MOD_ID + ":block/" + id);
+						});
+					});
+				}).build();
 			}));
 			
 			// BLOCK MODELS
 			dataProviders.add(new JsonDataProvider(JsonDataGenerator.ASSETS_MODELS_BLOCK_PATH + id + ".json", () -> {
-				JsonObject json = new JsonObject();
-				JsonObject textures = new JsonObject();
-				
-				if(isTinted) {
-					json.addProperty("parent", MoreCraft.MOD_ID + ":block/cube_all_tint");
-					textures.addProperty("all", texture);
-					textures.addProperty("tint", MoreCraft.MOD_ID + ":block/" + color + "_tint");
-				}
-				else {
-					json.addProperty("parent", "block/cube_all");
-					textures.addProperty("all", texture);
-				}
-				
-				json.add("textures", textures);
-				
-				return json;
+				return JsonBuilder.newObject((json) -> {
+					if(isTinted) {
+						json.add("parent", MoreCraft.MOD_ID + ":block/cube_all_tint");
+					}
+					else {
+						json.add("parent", "block/cube_all");
+					}
+					
+					json.addObject("textures", (textures) -> {
+						textures.add("all", texture);
+						
+						if(isTinted) {
+							textures.add("tint", MoreCraft.MOD_ID + ":block/" + color + "_tint");
+						}
+					});
+				}).build();
 			}));
 		});
 		
@@ -247,12 +268,61 @@ public class ColoredBlockHelper {
 			
 			// ITEM MODELS
 			dataProviders.add(new JsonDataProvider(JsonDataGenerator.ASSETS_MODELS_ITEM_PATH + id + ".json", () -> {
-				JsonObject json = new JsonObject();
-				
-				json.addProperty("parent", MoreCraft.MOD_ID + ":block/" + id);
-				
-				return json;
+				return JsonBuilder.newObject((json) -> {
+					json.add("parent", MoreCraft.MOD_ID + ":block/" + id);
+				}).build();
 			}));
+		});
+		
+		return dataProviders;
+	}
+	
+	public void generateRecipesJson(DataGenerator generator, String dyedIngredientTag) {
+		List<JsonDataProvider> assetGenerators = getRecipeDataProviders(dyedIngredientTag);
+		
+		for(JsonDataProvider assetGenerator : assetGenerators) {
+			assetGenerator.generate(generator);
+		}
+	}
+	
+	public String getDyedIngredientTag(String dyedIngredientTag) {
+		if(dyedIngredientTag.indexOf("minecraft:") == -1) {
+			dyedIngredientTag = MoreCraft.MOD_ID + ":" + dyedIngredientTag;
+		}
+		
+		return dyedIngredientTag;
+	}
+	
+	public List<JsonDataProvider> getRecipeDataProviders(String dyedIngredientTag) {
+		List<JsonDataProvider> dataProviders = new ArrayList<JsonDataProvider>();
+		
+		final String finalDyedIngredientTag = getDyedIngredientTag(dyedIngredientTag);
+
+		eachBlock((block, color) -> {
+			String id = block.getRegistryName().getPath();
+			
+			for(int i = 1; i <= 8; i++) {
+				final int count = i;
+				dataProviders.add(new JsonDataProvider(JsonDataGenerator.DATA_RECIPES_PATH + id + "_crafting_shapeless_" + count + ".json", () -> {
+					return JsonBuilder.newObject((json) -> {
+						json.add("type", "minecraft:crafting_shapeless");
+						json.addArray("ingredients", (ingredients) -> {
+							ingredients.addObject((ingredient) -> {
+								ingredient.add("item", "minecraft:" + color + "_dye");
+							});
+							for(int j = 0; j < count; j++) {
+								ingredients.addObject((ingredient) -> {
+									ingredient.add("tag", finalDyedIngredientTag);
+								});
+							}
+						});
+						json.addObject("result", (result) -> {
+							result.add("item", MoreCraft.MOD_ID + ":" + id);
+							result.add("count", count);
+						});
+					}).build();
+				}));
+			}
 		});
 		
 		return dataProviders;

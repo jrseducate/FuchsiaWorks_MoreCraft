@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:purple_dye"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:jungle_planks"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:jungle_planks"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:jungle_planks"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:jungle_planks"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:jungle_planks"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:jungle_planks"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:jungle_planks"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:jungle_planks"
+    }
+  ],
+  "result": {
+    "item": "fuchsiaworks_morecraft:jungle_planks_purple_tinted",
+    "count": 8
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:brown_dye"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:warped_planks"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:warped_planks"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:warped_planks"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:warped_planks"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:warped_planks"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:warped_planks"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:warped_planks"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:warped_planks"
+    }
+  ],
+  "result": {
+    "item": "fuchsiaworks_morecraft:warped_planks_brown_tinted",
+    "count": 8
+  }
+}

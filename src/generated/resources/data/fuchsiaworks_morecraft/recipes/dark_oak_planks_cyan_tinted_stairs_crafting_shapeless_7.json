@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:cyan_dye"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:dark_oak_stairs"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:dark_oak_stairs"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:dark_oak_stairs"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:dark_oak_stairs"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:dark_oak_stairs"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:dark_oak_stairs"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:dark_oak_stairs"
+    }
+  ],
+  "result": {
+    "item": "fuchsiaworks_morecraft:dark_oak_planks_cyan_tinted_stairs",
+    "count": 7
+  }
+}

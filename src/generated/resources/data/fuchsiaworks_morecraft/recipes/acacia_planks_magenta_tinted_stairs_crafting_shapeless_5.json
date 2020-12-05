@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:magenta_dye"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:acacia_stairs"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:acacia_stairs"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:acacia_stairs"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:acacia_stairs"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:acacia_stairs"
+    }
+  ],
+  "result": {
+    "item": "fuchsiaworks_morecraft:acacia_planks_magenta_tinted_stairs",
+    "count": 5
+  }
+}

@@ -5,15 +5,14 @@ import java.nio.file.Path;
 import java.util.List;
 import java.util.function.Supplier;
 
+import com.fuchsiaworks.morecraft.JsonBuilder;
 import com.fuchsiaworks.morecraft.MoreCraft;
 import com.fuchsiaworks.morecraft.block.Blocks;
 import com.fuchsiaworks.morecraft.item.Items;
 import com.fuchsiaworks.morecraft.recipe.Recipes;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.DirectoryCache;
@@ -64,22 +63,17 @@ public class JsonDataGenerator extends BaseDataGenerator {
 		String id = item.getRegistryName().getPath();
 		
 		new JsonDataProvider(JsonDataGenerator.ASSETS_MODELS_ITEM_PATH + id + ".json", () -> {
-			JsonObject json = new JsonObject();
-			
-			if(prefix == "item") {
-				JsonObject textures = new JsonObject();
-				
-				json.addProperty("parent", "minecraft:item/generated");
-				
-				textures.addProperty("layer0", MoreCraft.MOD_ID + ":" + prefix + "/" + id);
-				
-				json.add("textures", textures);
-			}
-			else {
-				json.addProperty("parent", MoreCraft.MOD_ID + ":" + prefix + "/" + id);
-			}
-			
-			return json;
+			return JsonBuilder.newObject((json) -> {
+				if(prefix == "item") {
+					json.add("parent", "minecraft:item/generated");
+					json.addObject("textures", (textures) -> {
+						textures.add("layer0", MoreCraft.MOD_ID + ":" + prefix + "/" + id);
+					});
+				}
+				else {
+					json.add("parent", MoreCraft.MOD_ID + ":" + prefix + "/" + id);
+				}
+			}).build();
 		}).generate(generator);
 	}
 	
@@ -93,31 +87,23 @@ public class JsonDataGenerator extends BaseDataGenerator {
 	
 	public static void generateBasicCraftingBlockRecipe(DataGenerator generator, String name, String craftingType, ItemStack inputItem, List<ItemStack> resultItems, int hits) {
 		new JsonDataGenerator.JsonDataProvider(DATA_RECIPES_PATH + name + ".json", () -> {
-			JsonObject json = new JsonObject();
-			JsonObject ingredient = new JsonObject();
-			JsonArray results = new JsonArray();
-			
-			json.addProperty("type", MoreCraft.MOD_ID + ":basic_crafting_block");
-			json.addProperty("crafting_type", craftingType);
-			
-			ingredient.addProperty("item", inputItem.getItem().getRegistryName().toString());
-			ingredient.addProperty("count", inputItem.getCount());
-			
-			json.add("ingredient", ingredient);
-			
-			for(ItemStack resultItem : resultItems) {
-				JsonObject result = new JsonObject();
-				
-				result.addProperty("item", resultItem.getItem().getRegistryName().toString());
-				result.addProperty("count", resultItem.getCount());
-				
-				results.add(result);
-			}
-			
-			json.add("results", results);
-			json.addProperty("hits", hits);
-			
-			return json;
+			return JsonBuilder.newObject((json) -> {
+				json.add("type", MoreCraft.MOD_ID + ":basic_crafting_block");
+				json.add("crafting_type", craftingType);
+				json.addObject("ingredient", (ingredient) -> {
+					ingredient.add("item", inputItem.getItem().getRegistryName().toString());
+					ingredient.add("count", inputItem.getCount());
+				});
+				json.addArray("results", (results) -> {
+					for(ItemStack resultItem : resultItems) {
+						results.addObject((result) -> {
+							result.add("item", resultItem.getItem().getRegistryName().toString());
+							result.add("count", resultItem.getCount());
+						});
+					}
+				});
+				json.add("hits", hits);
+			}).build();
 		}).generate(generator);;
 	}
 

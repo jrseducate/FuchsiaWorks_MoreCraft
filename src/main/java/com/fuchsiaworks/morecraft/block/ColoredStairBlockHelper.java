@@ -2,15 +2,17 @@ package com.fuchsiaworks.morecraft.block;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.function.Supplier;
 
+import com.fuchsiaworks.morecraft.JsonBuilder;
 import com.fuchsiaworks.morecraft.MoreCraft;
 import com.fuchsiaworks.morecraft.data_gen.JsonDataGenerator;
 import com.fuchsiaworks.morecraft.data_gen.JsonDataGenerator.JsonDataProvider;
-import com.google.gson.JsonObject;
 
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.AbstractBlock.Properties;
+import net.minecraft.data.DataGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.StairsBlock;
@@ -48,24 +50,22 @@ public class ColoredStairBlockHelper extends ColoredBlockHelper {
 		}
 	}
 	
-	public JsonObject getBlockStateVariant(String model, Integer x, Integer y) {
-		JsonObject variant = new JsonObject();
-		
-		variant.addProperty("model", MoreCraft.MOD_ID + ":block/" + model);
-		
-		if(x != null || y != null) {
-			if(x != null) {
-				variant.addProperty("x", x);
+	public Consumer<JsonBuilder.Object> getBlockStateVariant(String model, Integer x, Integer y) {
+		return (variant) -> {
+			variant.add("model", MoreCraft.MOD_ID + ":block/" + model);
+
+			if(x != null || y != null) {
+				if(x != null) {
+					variant.add("x", x);
+				}
+				
+				if(y != null) {
+					variant.add("y", y);
+				}
+				
+				variant.add("uvlock", true);
 			}
-			
-			if(y != null) {
-				variant.addProperty("y", y);
-			}
-			
-			variant.addProperty("uvlock", true);
-		}
-		
-		return variant;
+		};
 	}
 	
 	@Override
@@ -81,128 +81,177 @@ public class ColoredStairBlockHelper extends ColoredBlockHelper {
 			
 			// BLOCKSTATES
 			dataProviders.add(new JsonDataProvider(JsonDataGenerator.ASSETS_BLOCKSTATES_PATH + id + ".json", () -> {
-				JsonObject json = new JsonObject();
-				
-				JsonObject variants = new JsonObject();
-				
-				variants.add("facing=east,half=bottom,shape=inner_left", getBlockStateVariant(innerModel, null, 270));
-				variants.add("facing=east,half=bottom,shape=inner_right", getBlockStateVariant(innerModel, null, null));
-				variants.add("facing=east,half=bottom,shape=outer_left", getBlockStateVariant(outerModel, null, 270));
-				variants.add("facing=east,half=bottom,shape=outer_right", getBlockStateVariant(outerModel, null, null));
-				variants.add("facing=east,half=bottom,shape=straight", getBlockStateVariant(model, null, null));
-				variants.add("facing=east,half=top,shape=inner_left", getBlockStateVariant(innerModel, 180, null));
-				variants.add("facing=east,half=top,shape=inner_right", getBlockStateVariant(innerModel, 180, 90));
-				variants.add("facing=east,half=top,shape=outer_left", getBlockStateVariant(outerModel, 180, null));
-				variants.add("facing=east,half=top,shape=outer_right", getBlockStateVariant(outerModel, 180, 90));
-				variants.add("facing=east,half=top,shape=straight", getBlockStateVariant(model, 180, null));
-				variants.add("facing=north,half=bottom,shape=inner_left", getBlockStateVariant(innerModel, null, 180));
-				variants.add("facing=north,half=bottom,shape=inner_right", getBlockStateVariant(innerModel, null, 270));
-				variants.add("facing=north,half=bottom,shape=outer_left", getBlockStateVariant(outerModel, null, 180));
-				variants.add("facing=north,half=bottom,shape=outer_right", getBlockStateVariant(outerModel, null, 270));
-				variants.add("facing=north,half=bottom,shape=straight", getBlockStateVariant(model, null, 270));
-				variants.add("facing=north,half=top,shape=inner_left", getBlockStateVariant(innerModel, 180, 270));
-				variants.add("facing=north,half=top,shape=inner_right", getBlockStateVariant(innerModel, 180, null));
-				variants.add("facing=north,half=top,shape=outer_left", getBlockStateVariant(outerModel, 180, 270));
-				variants.add("facing=north,half=top,shape=outer_right", getBlockStateVariant(outerModel, 180, null));
-				variants.add("facing=north,half=top,shape=straight", getBlockStateVariant(model, 180, 270));
-				variants.add("facing=south,half=bottom,shape=inner_left", getBlockStateVariant(innerModel, null, null));
-				variants.add("facing=south,half=bottom,shape=inner_right", getBlockStateVariant(innerModel, null, 90));
-				variants.add("facing=south,half=bottom,shape=outer_left", getBlockStateVariant(outerModel, null, null));
-				variants.add("facing=south,half=bottom,shape=outer_right", getBlockStateVariant(outerModel, null, 90));
-				variants.add("facing=south,half=bottom,shape=straight", getBlockStateVariant(model, null, 90));
-				variants.add("facing=south,half=top,shape=inner_left", getBlockStateVariant(innerModel, 180, 90));
-				variants.add("facing=south,half=top,shape=inner_right", getBlockStateVariant(innerModel, 180, 180));
-				variants.add("facing=south,half=top,shape=outer_left", getBlockStateVariant(outerModel, 180, 90));
-				variants.add("facing=south,half=top,shape=outer_right", getBlockStateVariant(outerModel, 180, 180));
-				variants.add("facing=south,half=top,shape=straight", getBlockStateVariant(model, 180, 90));
-				variants.add("facing=west,half=bottom,shape=inner_left", getBlockStateVariant(innerModel, null, 90));
-				variants.add("facing=west,half=bottom,shape=inner_right", getBlockStateVariant(innerModel, null, 180));
-				variants.add("facing=west,half=bottom,shape=outer_left", getBlockStateVariant(outerModel, null, 90));
-				variants.add("facing=west,half=bottom,shape=outer_right", getBlockStateVariant(outerModel, null, 180));
-				variants.add("facing=west,half=bottom,shape=straight", getBlockStateVariant(model, null, 180));
-				variants.add("facing=west,half=top,shape=inner_left", getBlockStateVariant(innerModel, 180, 180));
-				variants.add("facing=west,half=top,shape=inner_right", getBlockStateVariant(innerModel, 180, 270));
-				variants.add("facing=west,half=top,shape=outer_left", getBlockStateVariant(outerModel, 180, 180));
-				variants.add("facing=west,half=top,shape=outer_right", getBlockStateVariant(outerModel, 180, 270));
-				variants.add("facing=west,half=top,shape=straight", getBlockStateVariant(model, 180, 180));
-				
-				json.add("variants", variants);
-				
-				return json;
+				return JsonBuilder.newObject((json) -> {
+					json.addObject("variants", (variants) -> {
+						variants.addObject("facing=east,half=bottom,shape=inner_left", getBlockStateVariant(innerModel, null, 270));
+						variants.addObject("facing=east,half=bottom,shape=inner_right", getBlockStateVariant(innerModel, null, null));
+						variants.addObject("facing=east,half=bottom,shape=outer_left", getBlockStateVariant(outerModel, null, 270));
+						variants.addObject("facing=east,half=bottom,shape=outer_right", getBlockStateVariant(outerModel, null, null));
+						variants.addObject("facing=east,half=bottom,shape=straight", getBlockStateVariant(model, null, null));
+						variants.addObject("facing=east,half=top,shape=inner_left", getBlockStateVariant(innerModel, 180, null));
+						variants.addObject("facing=east,half=top,shape=inner_right", getBlockStateVariant(innerModel, 180, 90));
+						variants.addObject("facing=east,half=top,shape=outer_left", getBlockStateVariant(outerModel, 180, null));
+						variants.addObject("facing=east,half=top,shape=outer_right", getBlockStateVariant(outerModel, 180, 90));
+						variants.addObject("facing=east,half=top,shape=straight", getBlockStateVariant(model, 180, null));
+						variants.addObject("facing=north,half=bottom,shape=inner_left", getBlockStateVariant(innerModel, null, 180));
+						variants.addObject("facing=north,half=bottom,shape=inner_right", getBlockStateVariant(innerModel, null, 270));
+						variants.addObject("facing=north,half=bottom,shape=outer_left", getBlockStateVariant(outerModel, null, 180));
+						variants.addObject("facing=north,half=bottom,shape=outer_right", getBlockStateVariant(outerModel, null, 270));
+						variants.addObject("facing=north,half=bottom,shape=straight", getBlockStateVariant(model, null, 270));
+						variants.addObject("facing=north,half=top,shape=inner_left", getBlockStateVariant(innerModel, 180, 270));
+						variants.addObject("facing=north,half=top,shape=inner_right", getBlockStateVariant(innerModel, 180, null));
+						variants.addObject("facing=north,half=top,shape=outer_left", getBlockStateVariant(outerModel, 180, 270));
+						variants.addObject("facing=north,half=top,shape=outer_right", getBlockStateVariant(outerModel, 180, null));
+						variants.addObject("facing=north,half=top,shape=straight", getBlockStateVariant(model, 180, 270));
+						variants.addObject("facing=south,half=bottom,shape=inner_left", getBlockStateVariant(innerModel, null, null));
+						variants.addObject("facing=south,half=bottom,shape=inner_right", getBlockStateVariant(innerModel, null, 90));
+						variants.addObject("facing=south,half=bottom,shape=outer_left", getBlockStateVariant(outerModel, null, null));
+						variants.addObject("facing=south,half=bottom,shape=outer_right", getBlockStateVariant(outerModel, null, 90));
+						variants.addObject("facing=south,half=bottom,shape=straight", getBlockStateVariant(model, null, 90));
+						variants.addObject("facing=south,half=top,shape=inner_left", getBlockStateVariant(innerModel, 180, 90));
+						variants.addObject("facing=south,half=top,shape=inner_right", getBlockStateVariant(innerModel, 180, 180));
+						variants.addObject("facing=south,half=top,shape=outer_left", getBlockStateVariant(outerModel, 180, 90));
+						variants.addObject("facing=south,half=top,shape=outer_right", getBlockStateVariant(outerModel, 180, 180));
+						variants.addObject("facing=south,half=top,shape=straight", getBlockStateVariant(model, 180, 90));
+						variants.addObject("facing=west,half=bottom,shape=inner_left", getBlockStateVariant(innerModel, null, 90));
+						variants.addObject("facing=west,half=bottom,shape=inner_right", getBlockStateVariant(innerModel, null, 180));
+						variants.addObject("facing=west,half=bottom,shape=outer_left", getBlockStateVariant(outerModel, null, 90));
+						variants.addObject("facing=west,half=bottom,shape=outer_right", getBlockStateVariant(outerModel, null, 180));
+						variants.addObject("facing=west,half=bottom,shape=straight", getBlockStateVariant(model, null, 180));
+						variants.addObject("facing=west,half=top,shape=inner_left", getBlockStateVariant(innerModel, 180, 180));
+						variants.addObject("facing=west,half=top,shape=inner_right", getBlockStateVariant(innerModel, 180, 270));
+						variants.addObject("facing=west,half=top,shape=outer_left", getBlockStateVariant(outerModel, 180, 180));
+						variants.addObject("facing=west,half=top,shape=outer_right", getBlockStateVariant(outerModel, 180, 270));
+						variants.addObject("facing=west,half=top,shape=straight", getBlockStateVariant(model, 180, 180));
+					});
+				}).build();
 			}));
 			
 			// BLOCK MODELS			
 			dataProviders.add(new JsonDataProvider(JsonDataGenerator.ASSETS_MODELS_BLOCK_PATH + model + ".json", () -> {
-				JsonObject json = new JsonObject();
-				JsonObject textures = new JsonObject();
-
-				if(isTinted) {
-					json.addProperty("parent", MoreCraft.MOD_ID + ":block/stairs_tint");
-					textures.addProperty("bottom", texture);
-					textures.addProperty("top", texture);
-					textures.addProperty("side", texture);
-					textures.addProperty("tint", MoreCraft.MOD_ID + ":block/" + color + "_tint");
-				}
-				else {
-					json.addProperty("parent", "block/stairs");
-					textures.addProperty("bottom", texture);
-					textures.addProperty("top", texture);
-					textures.addProperty("side", texture);
-				}
-				
-				json.add("textures", textures);
-				
-				return json;
+				return JsonBuilder.newObject((json) -> {
+					if(isTinted) {
+						json.add("parent", MoreCraft.MOD_ID + ":block/stairs_tint");
+					}
+					else {
+						json.add("parent", "block/stairs");
+					}
+					
+					json.addObject("textures", (textures) -> {
+						textures.add("bottom", texture);
+						textures.add("top", texture);
+						textures.add("side", texture);
+						
+						if(isTinted) {
+							textures.add("tint", MoreCraft.MOD_ID + ":block/" + color + "_tint");
+						}
+					});
+				}).build();
 			}));
 			
 			dataProviders.add(new JsonDataProvider(JsonDataGenerator.ASSETS_MODELS_BLOCK_PATH + innerModel + ".json", () -> {
-				JsonObject json = new JsonObject();
-				JsonObject textures = new JsonObject();
-
-				if(isTinted) {
-					json.addProperty("parent", MoreCraft.MOD_ID + ":block/inner_stairs_tint");			
-					textures.addProperty("bottom", texture);
-					textures.addProperty("top", texture);
-					textures.addProperty("side", texture);
-					textures.addProperty("tint", MoreCraft.MOD_ID + ":block/" + color + "_tint");
-				}
-				else {
-					json.addProperty("parent", "block/inner_stairs");
-					textures.addProperty("bottom", texture);
-					textures.addProperty("top", texture);
-					textures.addProperty("side", texture);
-				}
-				
-				json.add("textures", textures);
-				
-				return json;
+				return JsonBuilder.newObject((json) -> {
+					if(isTinted) {
+						json.add("parent", MoreCraft.MOD_ID + ":block/inner_stairs_tint");
+					}
+					else {
+						json.add("parent", "block/inner_stairs");
+					}
+					
+					json.addObject("textures", (textures) -> {
+						textures.add("bottom", texture);
+						textures.add("top", texture);
+						textures.add("side", texture);
+						
+						if(isTinted) {
+							textures.add("tint", MoreCraft.MOD_ID + ":block/" + color + "_tint");
+						}
+					});
+				}).build();
 			}));
 			
 			dataProviders.add(new JsonDataProvider(JsonDataGenerator.ASSETS_MODELS_BLOCK_PATH + outerModel + ".json", () -> {
-				JsonObject json = new JsonObject();
-				JsonObject textures = new JsonObject();
-
-				if(isTinted) {
-					json.addProperty("parent", MoreCraft.MOD_ID + ":block/outer_stairs_tint");
-					textures.addProperty("bottom", texture);
-					textures.addProperty("top", texture);
-					textures.addProperty("side", texture);
-					textures.addProperty("tint", MoreCraft.MOD_ID + ":block/" + color + "_tint");
-				}
-				else {
-					json.addProperty("parent", "block/outer_stairs");
-					textures.addProperty("bottom", texture);
-					textures.addProperty("top", texture);
-					textures.addProperty("side", texture);
-				}
-				
-				json.add("textures", textures);
-				
-				return json;
+				return JsonBuilder.newObject((json) -> {
+					if(isTinted) {
+						json.add("parent", MoreCraft.MOD_ID + ":block/outer_stairs_tint");
+					}
+					else {
+						json.add("parent", "block/outer_stairs");
+					}
+					
+					json.addObject("textures", (textures) -> {
+						textures.add("bottom", texture);
+						textures.add("top", texture);
+						textures.add("side", texture);
+						
+						if(isTinted) {
+							textures.add("tint", MoreCraft.MOD_ID + ":block/" + color + "_tint");
+						}
+					});
+				}).build();
 			}));
 		});
 		
 		return dataProviders;
 	}
+	
+	public void generateRecipesJson(DataGenerator generator, String dyedIngredientTag, ColoredBlockHelper coloredBlocks) {
+		List<JsonDataProvider> assetGenerators = getRecipeDataProviders(dyedIngredientTag, coloredBlocks);
+		
+		for(JsonDataProvider assetGenerator : assetGenerators) {
+			assetGenerator.generate(generator);
+		}
+	}
+	
+	public List<JsonDataProvider> getRecipeDataProviders(String dyedIngredientTag, ColoredBlockHelper coloredBlocks) {
+		List<JsonDataProvider> providers = super.getRecipeDataProviders(dyedIngredientTag);
 
+		eachBlock((block, color) -> {
+			String id = block.getRegistryName().getPath();
+			Block blockIngredient = coloredBlocks.getBlock(color);
+			String blockIngredientName = blockIngredient.getRegistryName().toString();
+			
+			providers.add(new JsonDataProvider(JsonDataGenerator.DATA_RECIPES_PATH + id + "_crafting_shaped_1.json", () -> {
+				return JsonBuilder.newObject((json) -> {
+					json.add("type", "minecraft:crafting_shaped");
+					json.addArray("pattern", (pattern) -> {
+						pattern.add("x  ");
+						pattern.add("xx ");
+						pattern.add("xxx");
+					});
+					json.addObject("key", (key) -> {
+						key.addObject("x", (x) -> {
+							x.add("item", blockIngredientName);
+						});
+					});
+					json.addObject("result", (result) -> {
+						result.add("item", MoreCraft.MOD_ID + ":" + id);
+						result.add("count", 4);
+					});
+				}).build();
+			}));
+			
+			providers.add(new JsonDataProvider(JsonDataGenerator.DATA_RECIPES_PATH + id + "_crafting_shaped_2.json", () -> {
+				return JsonBuilder.newObject((json) -> {
+					json.add("type", "minecraft:crafting_shaped");
+					json.addArray("pattern", (pattern) -> {
+						pattern.add("  x");
+						pattern.add(" xx");
+						pattern.add("xxx");
+					});
+					json.addObject("key", (key) -> {
+						key.addObject("x", (x) -> {
+							x.add("item", blockIngredientName);
+						});
+					});
+					json.addObject("result", (result) -> {
+						result.add("item", MoreCraft.MOD_ID + ":" + id);
+						result.add("count", 4);
+					});
+				}).build();
+			}));
+		});
+		
+		return providers;
+	}
 }

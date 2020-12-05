@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:pink_dye"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:dark_oak_slab"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:dark_oak_slab"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:dark_oak_slab"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:dark_oak_slab"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:dark_oak_slab"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:dark_oak_slab"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:dark_oak_slab"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:dark_oak_slab"
+    }
+  ],
+  "result": {
+    "item": "fuchsiaworks_morecraft:dark_oak_planks_pink_tinted_slab",
+    "count": 8
+  }
+}

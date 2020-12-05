@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:pink_dye"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:birch_slab"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:birch_slab"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:birch_slab"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:birch_slab"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:birch_slab"
+    }
+  ],
+  "result": {
+    "item": "fuchsiaworks_morecraft:birch_planks_pink_tinted_slab",
+    "count": 5
+  }
+}

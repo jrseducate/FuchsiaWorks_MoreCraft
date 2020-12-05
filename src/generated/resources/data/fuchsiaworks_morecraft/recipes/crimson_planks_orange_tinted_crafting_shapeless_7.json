@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:orange_dye"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:crimson_planks"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:crimson_planks"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:crimson_planks"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:crimson_planks"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:crimson_planks"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:crimson_planks"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:crimson_planks"
+    }
+  ],
+  "result": {
+    "item": "fuchsiaworks_morecraft:crimson_planks_orange_tinted",
+    "count": 7
+  }
+}

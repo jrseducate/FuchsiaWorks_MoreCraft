@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:purple_dye"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:warped_stairs"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:warped_stairs"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:warped_stairs"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:warped_stairs"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:warped_stairs"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:warped_stairs"
+    }
+  ],
+  "result": {
+    "item": "fuchsiaworks_morecraft:warped_planks_purple_tinted_stairs",
+    "count": 6
+  }
+}

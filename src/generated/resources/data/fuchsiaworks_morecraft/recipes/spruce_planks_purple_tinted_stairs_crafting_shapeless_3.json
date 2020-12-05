@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:purple_dye"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:spruce_stairs"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:spruce_stairs"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:spruce_stairs"
+    }
+  ],
+  "result": {
+    "item": "fuchsiaworks_morecraft:spruce_planks_purple_tinted_stairs",
+    "count": 3
+  }
+}

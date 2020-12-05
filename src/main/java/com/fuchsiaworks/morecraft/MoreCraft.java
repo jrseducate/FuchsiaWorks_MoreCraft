@@ -15,7 +15,6 @@ import com.fuchsiaworks.morecraft.sound.Sounds;
 import com.fuchsiaworks.morecraft.tile_entity.TileEntities;
 
 import net.minecraft.block.Block;
-import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.Item;
 import net.minecraft.item.crafting.IRecipeSerializer;
@@ -23,7 +22,6 @@ import net.minecraft.particles.ParticleType;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.biome.Biome.Category;
-import net.minecraft.world.biome.MobSpawnInfo.Spawners;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
@@ -70,7 +68,7 @@ public class MoreCraft {
 	}
 
 	private void doCommonStuff(final FMLCommonSetupEvent event) {
-		Networking.Register();
+		Networking.doCommonStuff(event);
 	}
 
 	private void doClientStuff(final FMLClientSetupEvent event) {

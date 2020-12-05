@@ -1,0 +1,22 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:jungle_stairs",
+    "fuchsiaworks_morecraft:jungle_planks_black_tinted_stairs",
+    "fuchsiaworks_morecraft:jungle_planks_blue_tinted_stairs",
+    "fuchsiaworks_morecraft:jungle_planks_brown_tinted_stairs",
+    "fuchsiaworks_morecraft:jungle_planks_cyan_tinted_stairs",
+    "fuchsiaworks_morecraft:jungle_planks_gray_tinted_stairs",
+    "fuchsiaworks_morecraft:jungle_planks_green_tinted_stairs",
+    "fuchsiaworks_morecraft:jungle_planks_light_blue_tinted_stairs",
+    "fuchsiaworks_morecraft:jungle_planks_light_gray_tinted_stairs",
+    "fuchsiaworks_morecraft:jungle_planks_lime_tinted_stairs",
+    "fuchsiaworks_morecraft:jungle_planks_magenta_tinted_stairs",
+    "fuchsiaworks_morecraft:jungle_planks_pink_tinted_stairs",
+    "fuchsiaworks_morecraft:jungle_planks_purple_tinted_stairs",
+    "fuchsiaworks_morecraft:jungle_planks_red_tinted_stairs",
+    "fuchsiaworks_morecraft:jungle_planks_orange_tinted_stairs",
+    "fuchsiaworks_morecraft:jungle_planks_white_tinted_stairs",
+    "fuchsiaworks_morecraft:jungle_planks_yellow_tinted_stairs"
+  ]
+}

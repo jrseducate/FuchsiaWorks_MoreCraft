@@ -1,6 +1,7 @@
 package com.fuchsiaworks.morecraft.block;
 
 import com.fuchsiaworks.morecraft.MoreCraft;
+import com.fuchsiaworks.morecraft.TagBuilder;
 import com.fuchsiaworks.morecraft.item.Items;
 
 import net.minecraft.block.AbstractBlock.Properties;
@@ -326,6 +327,145 @@ public class Blocks {
 		COLORED_WARPED_SLAB.setDoubleModel(COLORED_WARPED_PLANKS.idTemplate)
 				.setTexture(COLORED_WARPED_PLANKS.textureIdTemplate).generateBlocksJson(generator);
 		COLORED_WARPED_STAIRS.setTexture(COLORED_WARPED_PLANKS.textureIdTemplate).generateBlocksJson(generator);
+		
+		TagBuilder tagBuilder = new TagBuilder("planks", TagBuilder.TagType.VANILLA_BLOCK_ITEM);
+		tagBuilder.add(COLORED_ACACIA_PLANKS);
+		tagBuilder.add(COLORED_BIRCH_PLANKS);
+		tagBuilder.add(COLORED_DARK_OAK_PLANKS);
+		tagBuilder.add(COLORED_JUNGLE_PLANKS);
+		tagBuilder.add(COLORED_OAK_PLANKS);
+		tagBuilder.add(COLORED_SPRUCE_PLANKS);
+		tagBuilder.add(COLORED_CRIMSON_PLANKS);
+		tagBuilder.add(COLORED_WARPED_PLANKS);
+		tagBuilder.generate(generator);
+		
+		
+		tagBuilder = new TagBuilder("acacia_planks", TagBuilder.TagType.BLOCK_ITEM);
+		tagBuilder.add(REFERENCE_ACACIA_PLANKS);
+		tagBuilder.add(COLORED_ACACIA_PLANKS);
+		tagBuilder.generate(generator);
+		
+		tagBuilder = new TagBuilder("acacia_slab", TagBuilder.TagType.BLOCK_ITEM);
+		tagBuilder.add(REFERENCE_ACACIA_SLAB);
+		tagBuilder.add(COLORED_ACACIA_SLAB);
+		tagBuilder.generate(generator);
+		
+		tagBuilder = new TagBuilder("acacia_stairs", TagBuilder.TagType.BLOCK_ITEM);
+		tagBuilder.add(REFERENCE_ACACIA_STAIRS);
+		tagBuilder.add(COLORED_ACACIA_STAIRS);
+		tagBuilder.generate(generator);
+		
+		
+		tagBuilder = new TagBuilder("birch_planks", TagBuilder.TagType.BLOCK_ITEM);
+		tagBuilder.add(REFERENCE_BIRCH_PLANKS);
+		tagBuilder.add(COLORED_BIRCH_PLANKS);
+		tagBuilder.generate(generator);
+		
+		tagBuilder = new TagBuilder("birch_slab", TagBuilder.TagType.BLOCK_ITEM);
+		tagBuilder.add(REFERENCE_BIRCH_SLAB);
+		tagBuilder.add(COLORED_BIRCH_SLAB);
+		tagBuilder.generate(generator);
+		
+		tagBuilder = new TagBuilder("birch_stairs", TagBuilder.TagType.BLOCK_ITEM);
+		tagBuilder.add(REFERENCE_BIRCH_STAIRS);
+		tagBuilder.add(COLORED_BIRCH_STAIRS);
+		tagBuilder.generate(generator);
+		
+		
+		tagBuilder = new TagBuilder("dark_oak_planks", TagBuilder.TagType.BLOCK_ITEM);
+		tagBuilder.add(REFERENCE_DARK_OAK_PLANKS);
+		tagBuilder.add(COLORED_DARK_OAK_PLANKS);
+		tagBuilder.generate(generator);
+		
+		tagBuilder = new TagBuilder("dark_oak_slab", TagBuilder.TagType.BLOCK_ITEM);
+		tagBuilder.add(REFERENCE_DARK_OAK_SLAB);
+		tagBuilder.add(COLORED_DARK_OAK_SLAB);
+		tagBuilder.generate(generator);
+		
+		tagBuilder = new TagBuilder("dark_oak_stairs", TagBuilder.TagType.BLOCK_ITEM);
+		tagBuilder.add(REFERENCE_DARK_OAK_STAIRS);
+		tagBuilder.add(COLORED_DARK_OAK_STAIRS);
+		tagBuilder.generate(generator);
+		
+		
+		tagBuilder = new TagBuilder("jungle_planks", TagBuilder.TagType.BLOCK_ITEM);
+		tagBuilder.add(REFERENCE_JUNGLE_PLANKS);
+		tagBuilder.add(COLORED_JUNGLE_PLANKS);
+		tagBuilder.generate(generator);
+		
+		tagBuilder = new TagBuilder("jungle_slab", TagBuilder.TagType.BLOCK_ITEM);
+		tagBuilder.add(REFERENCE_JUNGLE_SLAB);
+		tagBuilder.add(COLORED_JUNGLE_SLAB);
+		tagBuilder.generate(generator);
+		
+		tagBuilder = new TagBuilder("jungle_stairs", TagBuilder.TagType.BLOCK_ITEM);
+		tagBuilder.add(REFERENCE_JUNGLE_STAIRS);
+		tagBuilder.add(COLORED_JUNGLE_STAIRS);
+		tagBuilder.generate(generator);
+		
+		
+		tagBuilder = new TagBuilder("oak_planks", TagBuilder.TagType.BLOCK_ITEM);
+		tagBuilder.add(REFERENCE_OAK_PLANKS);
+		tagBuilder.add(COLORED_OAK_PLANKS);
+		tagBuilder.generate(generator);
+		
+		tagBuilder = new TagBuilder("oak_slab", TagBuilder.TagType.BLOCK_ITEM);
+		tagBuilder.add(Blocks.REFERENCE_OAK_SLAB);
+		tagBuilder.add(COLORED_OAK_SLAB);
+		tagBuilder.generate(generator);
+
+		tagBuilder = new TagBuilder("oak_stairs", TagBuilder.TagType.BLOCK_ITEM);
+		tagBuilder.add(Blocks.REFERENCE_OAK_STAIRS);
+		tagBuilder.add(COLORED_OAK_STAIRS);
+		tagBuilder.generate(generator);
+		
+		
+		tagBuilder = new TagBuilder("spruce_planks", TagBuilder.TagType.BLOCK_ITEM);
+		tagBuilder.add(REFERENCE_SPRUCE_PLANKS);
+		tagBuilder.add(COLORED_SPRUCE_PLANKS);
+		tagBuilder.generate(generator);
+
+		tagBuilder = new TagBuilder("spruce_slab", TagBuilder.TagType.BLOCK_ITEM);
+		tagBuilder.add(REFERENCE_SPRUCE_SLAB);
+		tagBuilder.add(COLORED_SPRUCE_SLAB);
+		tagBuilder.generate(generator);
+
+		tagBuilder = new TagBuilder("spruce_stairs", TagBuilder.TagType.BLOCK_ITEM);
+		tagBuilder.add(REFERENCE_SPRUCE_STAIRS);
+		tagBuilder.add(COLORED_SPRUCE_STAIRS);
+		tagBuilder.generate(generator);
+		
+		
+		tagBuilder = new TagBuilder("crimson_planks", TagBuilder.TagType.BLOCK_ITEM);
+		tagBuilder.add(REFERENCE_CRIMSON_PLANKS);
+		tagBuilder.add(COLORED_CRIMSON_PLANKS);
+		tagBuilder.generate(generator);
+
+		tagBuilder = new TagBuilder("crimson_slab", TagBuilder.TagType.BLOCK_ITEM);
+		tagBuilder.add(REFERENCE_CRIMSON_SLAB);
+		tagBuilder.add(COLORED_CRIMSON_SLAB);
+		tagBuilder.generate(generator);
+
+		tagBuilder = new TagBuilder("crimson_stairs", TagBuilder.TagType.BLOCK_ITEM);
+		tagBuilder.add(REFERENCE_CRIMSON_STAIRS);
+		tagBuilder.add(COLORED_CRIMSON_STAIRS);
+		tagBuilder.generate(generator);
+		
+		
+		tagBuilder = new TagBuilder("warped_planks", TagBuilder.TagType.BLOCK_ITEM);
+		tagBuilder.add(Blocks.REFERENCE_WARPED_PLANKS);
+		tagBuilder.add(COLORED_WARPED_PLANKS);
+		tagBuilder.generate(generator);
+		
+		tagBuilder = new TagBuilder("warped_slab", TagBuilder.TagType.BLOCK_ITEM);
+		tagBuilder.add(Blocks.REFERENCE_WARPED_SLAB);
+		tagBuilder.add(COLORED_WARPED_SLAB);
+		tagBuilder.generate(generator);
+		
+		tagBuilder = new TagBuilder("warped_stairs", TagBuilder.TagType.BLOCK_ITEM);
+		tagBuilder.add(Blocks.REFERENCE_WARPED_STAIRS);
+		tagBuilder.add(COLORED_WARPED_STAIRS);
+		tagBuilder.generate(generator);
 	}
 
 	public static void onGatherImageData(DataGenerator generator) {

@@ -2,6 +2,8 @@ package com.fuchsiaworks.morecraft;
 
 import java.util.ArrayList;
 
+import com.google.common.base.Supplier;
+
 public class Utils {
 	@SafeVarargs
 	public static <T> ArrayList<T> ToList(T... items) {
@@ -12,5 +14,9 @@ public class Utils {
 		}
 		
 		return list;
+	}
+	
+	public static <T> T Init(Supplier<T> callback) {
+		return callback.get();
 	}
 }

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:lime_dye"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:spruce_planks"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:spruce_planks"
+    }
+  ],
+  "result": {
+    "item": "fuchsiaworks_morecraft:spruce_planks_lime_tinted",
+    "count": 2
+  }
+}

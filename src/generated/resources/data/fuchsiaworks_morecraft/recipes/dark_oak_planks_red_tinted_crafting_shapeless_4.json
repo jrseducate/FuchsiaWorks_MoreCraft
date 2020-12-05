@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:red_dye"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:dark_oak_planks"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:dark_oak_planks"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:dark_oak_planks"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:dark_oak_planks"
+    }
+  ],
+  "result": {
+    "item": "fuchsiaworks_morecraft:dark_oak_planks_red_tinted",
+    "count": 4
+  }
+}

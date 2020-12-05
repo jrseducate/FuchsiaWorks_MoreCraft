@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:orange_dye"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:oak_slab"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:oak_slab"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:oak_slab"
+    }
+  ],
+  "result": {
+    "item": "fuchsiaworks_morecraft:oak_planks_orange_tinted_slab",
+    "count": 3
+  }
+}

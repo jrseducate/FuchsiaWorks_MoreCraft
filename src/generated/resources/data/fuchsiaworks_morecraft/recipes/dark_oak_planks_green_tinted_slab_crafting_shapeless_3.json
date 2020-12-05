@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:green_dye"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:dark_oak_slab"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:dark_oak_slab"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:dark_oak_slab"
+    }
+  ],
+  "result": {
+    "item": "fuchsiaworks_morecraft:dark_oak_planks_green_tinted_slab",
+    "count": 3
+  }
+}

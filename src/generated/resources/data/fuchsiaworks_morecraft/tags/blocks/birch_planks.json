@@ -1,0 +1,22 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:birch_planks",
+    "fuchsiaworks_morecraft:birch_planks_black_tinted",
+    "fuchsiaworks_morecraft:birch_planks_blue_tinted",
+    "fuchsiaworks_morecraft:birch_planks_brown_tinted",
+    "fuchsiaworks_morecraft:birch_planks_cyan_tinted",
+    "fuchsiaworks_morecraft:birch_planks_gray_tinted",
+    "fuchsiaworks_morecraft:birch_planks_green_tinted",
+    "fuchsiaworks_morecraft:birch_planks_light_blue_tinted",
+    "fuchsiaworks_morecraft:birch_planks_light_gray_tinted",
+    "fuchsiaworks_morecraft:birch_planks_lime_tinted",
+    "fuchsiaworks_morecraft:birch_planks_magenta_tinted",
+    "fuchsiaworks_morecraft:birch_planks_pink_tinted",
+    "fuchsiaworks_morecraft:birch_planks_purple_tinted",
+    "fuchsiaworks_morecraft:birch_planks_red_tinted",
+    "fuchsiaworks_morecraft:birch_planks_orange_tinted",
+    "fuchsiaworks_morecraft:birch_planks_white_tinted",
+    "fuchsiaworks_morecraft:birch_planks_yellow_tinted"
+  ]
+}

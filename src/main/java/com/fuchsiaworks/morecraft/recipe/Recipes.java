@@ -1,10 +1,8 @@
 package com.fuchsiaworks.morecraft.recipe;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.fuchsiaworks.morecraft.MoreCraft;
 import com.fuchsiaworks.morecraft.Utils;
+import com.fuchsiaworks.morecraft.block.Blocks;
 import com.fuchsiaworks.morecraft.data_gen.JsonDataGenerator;
 import com.fuchsiaworks.morecraft.item.Items;
 
@@ -56,6 +54,46 @@ public class Recipes {
 	}
 	
 	public static void onGatherJsonData(DataGenerator generator) {
+		Blocks.COLORED_ACACIA_PLANKS.generateRecipesJson(generator, "acacia_planks");
+		Blocks.COLORED_ACACIA_SLAB.generateRecipesJson(generator, "acacia_slab", Blocks.COLORED_ACACIA_PLANKS);
+		Blocks.COLORED_ACACIA_STAIRS.generateRecipesJson(generator, "acacia_stairs", Blocks.COLORED_ACACIA_PLANKS);
+//		Blocks.COLORED_ACACIA_DOOR.generateRecipesJson(generator, "acacia_door", Blocks.COLORED_ACACIA_PLANKS);
+
+		Blocks.COLORED_BIRCH_PLANKS.generateRecipesJson(generator, "birch_planks");
+		Blocks.COLORED_BIRCH_SLAB.generateRecipesJson(generator, "birch_slab", Blocks.COLORED_BIRCH_PLANKS);
+		Blocks.COLORED_BIRCH_STAIRS.generateRecipesJson(generator, "birch_stairs", Blocks.COLORED_BIRCH_PLANKS);
+//		Blocks.COLORED_BIRCH_DOOR.generateRecipesJson(generator, "birch_door", Blocks.COLORED_BIRCH_PLANKS);
+
+		Blocks.COLORED_DARK_OAK_PLANKS.generateRecipesJson(generator, "dark_oak_planks");
+		Blocks.COLORED_DARK_OAK_SLAB.generateRecipesJson(generator, "dark_oak_slab", Blocks.COLORED_DARK_OAK_PLANKS);
+		Blocks.COLORED_DARK_OAK_STAIRS.generateRecipesJson(generator, "dark_oak_stairs", Blocks.COLORED_DARK_OAK_PLANKS);
+//		Blocks.COLORED_DARK_OAK_DOOR.generateRecipesJson(generator, "dark_oak_door", Blocks.COLORED_DARK_OAK_PLANKS);
+
+		Blocks.COLORED_JUNGLE_PLANKS.generateRecipesJson(generator, "jungle_planks");
+		Blocks.COLORED_JUNGLE_SLAB.generateRecipesJson(generator, "jungle_slab", Blocks.COLORED_JUNGLE_PLANKS);
+		Blocks.COLORED_JUNGLE_STAIRS.generateRecipesJson(generator, "jungle_stairs", Blocks.COLORED_JUNGLE_PLANKS);
+//		Blocks.COLORED_JUNGLE_DOOR.generateRecipesJson(generator, "jungle_door", Blocks.COLORED_JUNGLE_PLANKS);
+
+		Blocks.COLORED_OAK_PLANKS.generateRecipesJson(generator, "oak_planks");
+		Blocks.COLORED_OAK_SLAB.generateRecipesJson(generator, "oak_slab", Blocks.COLORED_OAK_PLANKS);
+		Blocks.COLORED_OAK_STAIRS.generateRecipesJson(generator, "oak_stairs", Blocks.COLORED_OAK_PLANKS);
+//		Blocks.COLORED_OAK_DOOR.generateRecipesJson(generator, "oak_door", Blocks.COLORED_OAK_PLANKS);
+
+		Blocks.COLORED_SPRUCE_PLANKS.generateRecipesJson(generator, "spruce_planks");
+		Blocks.COLORED_SPRUCE_SLAB.generateRecipesJson(generator, "spruce_slab", Blocks.COLORED_SPRUCE_SLAB);
+		Blocks.COLORED_SPRUCE_STAIRS.generateRecipesJson(generator, "spruce_stairs", Blocks.COLORED_SPRUCE_SLAB);
+//		Blocks.COLORED_SPRUCE_DOOR.generateRecipesJson(generator, "spruce_door", Blocks.COLORED_SPRUCE_SLAB);
+
+		Blocks.COLORED_CRIMSON_PLANKS.generateRecipesJson(generator, "crimson_planks");
+		Blocks.COLORED_CRIMSON_SLAB.generateRecipesJson(generator, "crimson_slab", Blocks.COLORED_CRIMSON_PLANKS);
+		Blocks.COLORED_CRIMSON_STAIRS.generateRecipesJson(generator, "crimson_stairs", Blocks.COLORED_CRIMSON_PLANKS);
+//		Blocks.COLORED_CRIMSON_DOOR.generateRecipesJson(generator, "crimson_door", Blocks.COLORED_CRIMSON_PLANKS);
+
+		Blocks.COLORED_WARPED_PLANKS.generateRecipesJson(generator, "warped_planks");
+		Blocks.COLORED_WARPED_SLAB.generateRecipesJson(generator, "warped_slab", Blocks.COLORED_WARPED_PLANKS);
+		Blocks.COLORED_WARPED_STAIRS.generateRecipesJson(generator, "warped_stairs", Blocks.COLORED_WARPED_PLANKS);
+//		Blocks.COLORED_WARPED_DOOR.generateRecipesJson(generator, "warped_door", Blocks.COLORED_WARPED_PLANKS);
+		
 		generateChoppingBlockRecipe(generator, Items.REFERENCE_BEEF, 1, Items.BEEF_DICED, 4, 5);
 		generateChoppingBlockRecipe(generator, Items.REFERENCE_CHICKEN, 1, Items.CHICKEN_DICED, 4, 5);
 		generateChoppingBlockRecipe(generator, Items.REFERENCE_COD, 1, Items.COD_DICED, 4, 5);
@@ -83,6 +121,6 @@ public class Recipes {
 		generateChoppingBlockRecipe(generator, Items.CROP_ONION, 1, Items.CROP_ONION_DICED, 4, 5);
 		generateChoppingBlockRecipe(generator, Items.CROP_BROCCOLI, 1, Items.CROP_BROCCOLI_DICED, 4, 5);
 		
-		generateChurningBlockRecipe(generator, new ItemStack(Items.REFERENCE_MILK_BUCKET), 5, new ItemStack(Items.BUTTER), new ItemStack(Items.REFERENCE_BUCKET));
+		generateChurningBlockRecipe(generator, new ItemStack(Items.REFERENCE_MILK_BUCKET), 5, new ItemStack(Items.BUTTER, 2), new ItemStack(Items.REFERENCE_BUCKET));
 	}
 }

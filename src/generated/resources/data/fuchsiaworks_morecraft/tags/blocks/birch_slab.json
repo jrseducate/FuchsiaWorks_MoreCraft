@@ -1,0 +1,22 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:birch_slab",
+    "fuchsiaworks_morecraft:birch_planks_black_tinted_slab",
+    "fuchsiaworks_morecraft:birch_planks_blue_tinted_slab",
+    "fuchsiaworks_morecraft:birch_planks_brown_tinted_slab",
+    "fuchsiaworks_morecraft:birch_planks_cyan_tinted_slab",
+    "fuchsiaworks_morecraft:birch_planks_gray_tinted_slab",
+    "fuchsiaworks_morecraft:birch_planks_green_tinted_slab",
+    "fuchsiaworks_morecraft:birch_planks_light_blue_tinted_slab",
+    "fuchsiaworks_morecraft:birch_planks_light_gray_tinted_slab",
+    "fuchsiaworks_morecraft:birch_planks_lime_tinted_slab",
+    "fuchsiaworks_morecraft:birch_planks_magenta_tinted_slab",
+    "fuchsiaworks_morecraft:birch_planks_pink_tinted_slab",
+    "fuchsiaworks_morecraft:birch_planks_purple_tinted_slab",
+    "fuchsiaworks_morecraft:birch_planks_red_tinted_slab",
+    "fuchsiaworks_morecraft:birch_planks_orange_tinted_slab",
+    "fuchsiaworks_morecraft:birch_planks_white_tinted_slab",
+    "fuchsiaworks_morecraft:birch_planks_yellow_tinted_slab"
+  ]
+}

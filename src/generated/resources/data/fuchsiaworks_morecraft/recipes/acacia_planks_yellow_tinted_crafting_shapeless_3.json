@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:yellow_dye"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:acacia_planks"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:acacia_planks"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:acacia_planks"
+    }
+  ],
+  "result": {
+    "item": "fuchsiaworks_morecraft:acacia_planks_yellow_tinted",
+    "count": 3
+  }
+}

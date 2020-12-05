@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:purple_dye"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:acacia_stairs"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:acacia_stairs"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:acacia_stairs"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:acacia_stairs"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:acacia_stairs"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:acacia_stairs"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:acacia_stairs"
+    }
+  ],
+  "result": {
+    "item": "fuchsiaworks_morecraft:acacia_planks_purple_tinted_stairs",
+    "count": 7
+  }
+}

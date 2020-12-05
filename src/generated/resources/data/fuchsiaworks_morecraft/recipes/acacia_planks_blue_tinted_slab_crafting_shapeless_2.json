@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:blue_dye"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:acacia_slab"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:acacia_slab"
+    }
+  ],
+  "result": {
+    "item": "fuchsiaworks_morecraft:acacia_planks_blue_tinted_slab",
+    "count": 2
+  }
+}

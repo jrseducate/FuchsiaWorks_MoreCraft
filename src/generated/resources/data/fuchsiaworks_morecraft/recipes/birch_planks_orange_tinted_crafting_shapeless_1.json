@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:orange_dye"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:birch_planks"
+    }
+  ],
+  "result": {
+    "item": "fuchsiaworks_morecraft:birch_planks_orange_tinted",
+    "count": 1
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:purple_dye"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:dark_oak_stairs"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:dark_oak_stairs"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:dark_oak_stairs"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:dark_oak_stairs"
+    }
+  ],
+  "result": {
+    "item": "fuchsiaworks_morecraft:dark_oak_planks_purple_tinted_stairs",
+    "count": 4
+  }
+}

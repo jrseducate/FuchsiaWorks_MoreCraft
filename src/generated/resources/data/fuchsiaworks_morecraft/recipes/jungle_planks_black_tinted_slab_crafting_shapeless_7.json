@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:black_dye"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:jungle_slab"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:jungle_slab"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:jungle_slab"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:jungle_slab"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:jungle_slab"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:jungle_slab"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:jungle_slab"
+    }
+  ],
+  "result": {
+    "item": "fuchsiaworks_morecraft:jungle_planks_black_tinted_slab",
+    "count": 7
+  }
+}

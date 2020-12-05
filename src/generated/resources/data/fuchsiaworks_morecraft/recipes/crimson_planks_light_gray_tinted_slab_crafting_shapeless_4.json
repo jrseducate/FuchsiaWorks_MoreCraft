@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:light_gray_dye"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:crimson_slab"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:crimson_slab"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:crimson_slab"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:crimson_slab"
+    }
+  ],
+  "result": {
+    "item": "fuchsiaworks_morecraft:crimson_planks_light_gray_tinted_slab",
+    "count": 4
+  }
+}

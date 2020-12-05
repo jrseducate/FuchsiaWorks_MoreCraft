@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:lime_dye"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:birch_slab"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:birch_slab"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:birch_slab"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:birch_slab"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:birch_slab"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:birch_slab"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:birch_slab"
+    }
+  ],
+  "result": {
+    "item": "fuchsiaworks_morecraft:birch_planks_lime_tinted_slab",
+    "count": 7
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:brown_dye"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:acacia_planks"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:acacia_planks"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:acacia_planks"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:acacia_planks"
+    }
+  ],
+  "result": {
+    "item": "fuchsiaworks_morecraft:acacia_planks_brown_tinted",
+    "count": 4
+  }
+}

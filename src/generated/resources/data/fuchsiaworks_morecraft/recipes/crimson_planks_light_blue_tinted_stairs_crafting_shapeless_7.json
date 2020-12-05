@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:light_blue_dye"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:crimson_stairs"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:crimson_stairs"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:crimson_stairs"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:crimson_stairs"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:crimson_stairs"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:crimson_stairs"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:crimson_stairs"
+    }
+  ],
+  "result": {
+    "item": "fuchsiaworks_morecraft:crimson_planks_light_blue_tinted_stairs",
+    "count": 7
+  }
+}

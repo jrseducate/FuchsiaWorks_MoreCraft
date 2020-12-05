@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  x",
+    " xx",
+    "xxx"
+  ],
+  "key": {
+    "x": {
+      "item": "fuchsiaworks_morecraft:spruce_planks_brown_tinted_slab"
+    }
+  },
+  "result": {
+    "item": "fuchsiaworks_morecraft:spruce_planks_brown_tinted_stairs",
+    "count": 4
+  }
+}

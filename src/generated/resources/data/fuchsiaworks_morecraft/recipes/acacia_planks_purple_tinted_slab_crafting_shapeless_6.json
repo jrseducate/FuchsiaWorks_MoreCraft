@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:purple_dye"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:acacia_slab"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:acacia_slab"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:acacia_slab"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:acacia_slab"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:acacia_slab"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:acacia_slab"
+    }
+  ],
+  "result": {
+    "item": "fuchsiaworks_morecraft:acacia_planks_purple_tinted_slab",
+    "count": 6
+  }
+}
