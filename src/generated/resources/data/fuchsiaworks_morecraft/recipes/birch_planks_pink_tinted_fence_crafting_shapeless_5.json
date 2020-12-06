@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:pink_dye"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/birch_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/birch_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/birch_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/birch_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/birch_fence"
+    }
+  ],
+  "result": {
+    "item": "fuchsiaworks_morecraft:birch_planks_pink_tinted_fence",
+    "count": 5
+  }
+}

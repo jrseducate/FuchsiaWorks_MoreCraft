@@ -4,6 +4,6 @@
     "bottom": "minecraft:block/oak_planks",
     "top": "minecraft:block/oak_planks",
     "side": "minecraft:block/oak_planks",
-    "tint": "fuchsiaworks_morecraft:block/brown_tint"
+    "tint": "fuchsiaworks_morecraft:block/tint_brown"
   }
 }

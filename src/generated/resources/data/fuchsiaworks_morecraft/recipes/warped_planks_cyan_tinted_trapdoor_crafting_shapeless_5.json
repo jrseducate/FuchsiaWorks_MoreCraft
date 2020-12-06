@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:cyan_dye"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/warped_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/warped_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/warped_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/warped_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/warped_fence"
+    }
+  ],
+  "result": {
+    "item": "fuchsiaworks_morecraft:warped_planks_cyan_tinted_trapdoor",
+    "count": 5
+  }
+}

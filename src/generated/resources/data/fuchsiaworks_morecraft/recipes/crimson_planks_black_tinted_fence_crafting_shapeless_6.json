@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:black_dye"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/crimson_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/crimson_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/crimson_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/crimson_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/crimson_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/crimson_fence"
+    }
+  ],
+  "result": {
+    "item": "fuchsiaworks_morecraft:crimson_planks_black_tinted_fence",
+    "count": 6
+  }
+}

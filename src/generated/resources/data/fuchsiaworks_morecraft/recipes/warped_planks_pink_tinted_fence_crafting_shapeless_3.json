@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:pink_dye"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/warped_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/warped_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/warped_fence"
+    }
+  ],
+  "result": {
+    "item": "fuchsiaworks_morecraft:warped_planks_pink_tinted_fence",
+    "count": 3
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "fuchsiaworks_morecraft:block/trapdoor_open_tint",
+  "textures": {
+    "texture": "minecraft:block/acacia_trapdoor",
+    "tintSide": "fuchsiaworks_morecraft:block/acacia_trapdoor_tint_light_blue",
+    "tintFace": "fuchsiaworks_morecraft:block/acacia_trapdoor_tint_light_blue"
+  }
+}

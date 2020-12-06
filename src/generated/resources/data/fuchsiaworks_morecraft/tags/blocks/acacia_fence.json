@@ -1,0 +1,22 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:acacia_fence",
+    "fuchsiaworks_morecraft:acacia_planks_black_tinted_fence",
+    "fuchsiaworks_morecraft:acacia_planks_blue_tinted_fence",
+    "fuchsiaworks_morecraft:acacia_planks_brown_tinted_fence",
+    "fuchsiaworks_morecraft:acacia_planks_cyan_tinted_fence",
+    "fuchsiaworks_morecraft:acacia_planks_gray_tinted_fence",
+    "fuchsiaworks_morecraft:acacia_planks_green_tinted_fence",
+    "fuchsiaworks_morecraft:acacia_planks_light_blue_tinted_fence",
+    "fuchsiaworks_morecraft:acacia_planks_light_gray_tinted_fence",
+    "fuchsiaworks_morecraft:acacia_planks_lime_tinted_fence",
+    "fuchsiaworks_morecraft:acacia_planks_magenta_tinted_fence",
+    "fuchsiaworks_morecraft:acacia_planks_pink_tinted_fence",
+    "fuchsiaworks_morecraft:acacia_planks_purple_tinted_fence",
+    "fuchsiaworks_morecraft:acacia_planks_red_tinted_fence",
+    "fuchsiaworks_morecraft:acacia_planks_orange_tinted_fence",
+    "fuchsiaworks_morecraft:acacia_planks_white_tinted_fence",
+    "fuchsiaworks_morecraft:acacia_planks_yellow_tinted_fence"
+  ]
+}

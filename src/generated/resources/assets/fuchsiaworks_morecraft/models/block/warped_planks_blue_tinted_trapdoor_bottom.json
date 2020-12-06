@@ -1,0 +1,8 @@
+{
+  "parent": "fuchsiaworks_morecraft:block/trapdoor_bottom_tint",
+  "textures": {
+    "texture": "minecraft:block/warped_trapdoor",
+    "tintSide": "fuchsiaworks_morecraft:block/warped_trapdoor_tint_blue",
+    "tintFace": "fuchsiaworks_morecraft:block/warped_trapdoor_tint_blue"
+  }
+}

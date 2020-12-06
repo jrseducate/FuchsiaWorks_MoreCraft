@@ -1,0 +1,8 @@
+{
+  "parent": "fuchsiaworks_morecraft:block/trapdoor_bottom_tint",
+  "textures": {
+    "texture": "minecraft:block/jungle_trapdoor",
+    "tintSide": "fuchsiaworks_morecraft:block/jungle_trapdoor_tint_black",
+    "tintFace": "fuchsiaworks_morecraft:block/jungle_trapdoor_tint_black"
+  }
+}

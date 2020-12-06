@@ -21,12 +21,13 @@ public class Entities {
 		Minecraft minecraft = Minecraft.getInstance();
 		EntityRendererManager manager = minecraft.getRenderManager();
 
-//		manager.register(WARLOCK, new WarlockRenderer(manager));
+		// manager.register(WARLOCK, new WarlockRenderer(manager));
 	}
 
 	public static void RegisterEntities(Register<EntityType<?>> entityRegistryEvent) {
-//		GlobalEntityTypeAttributes.put(WARLOCK, WarlockEntity.getEntityAttributes().func_233813_a_());
-//		entityRegistryEvent.getRegistry().register(WARLOCK);
+		// GlobalEntityTypeAttributes.put(WARLOCK,
+		// WarlockEntity.getEntityAttributes().func_233813_a_());
+		// entityRegistryEvent.getRegistry().register(WARLOCK);
 	}
 
 }

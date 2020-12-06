@@ -1,0 +1,7 @@
+{
+  "parent": "fuchsiaworks_morecraft:block/fence_inventory_tint",
+  "textures": {
+    "texture": "minecraft:block/acacia_planks",
+    "tint": "fuchsiaworks_morecraft:block/tint_yellow"
+  }
+}

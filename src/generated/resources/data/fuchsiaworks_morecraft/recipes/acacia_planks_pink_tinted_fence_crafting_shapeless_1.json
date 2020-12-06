@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:pink_dye"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/acacia_fence"
+    }
+  ],
+  "result": {
+    "item": "fuchsiaworks_morecraft:acacia_planks_pink_tinted_fence",
+    "count": 1
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "fuchsiaworks_morecraft:block/trapdoor_bottom_tint",
+  "textures": {
+    "texture": "minecraft:block/crimson_trapdoor",
+    "tintSide": "fuchsiaworks_morecraft:block/crimson_trapdoor_tint_purple",
+    "tintFace": "fuchsiaworks_morecraft:block/crimson_trapdoor_tint_purple"
+  }
+}

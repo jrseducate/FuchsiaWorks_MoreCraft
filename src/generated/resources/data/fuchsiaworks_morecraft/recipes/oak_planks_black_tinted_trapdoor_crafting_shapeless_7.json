@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:black_dye"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/oak_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/oak_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/oak_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/oak_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/oak_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/oak_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/oak_fence"
+    }
+  ],
+  "result": {
+    "item": "fuchsiaworks_morecraft:oak_planks_black_tinted_trapdoor",
+    "count": 7
+  }
+}

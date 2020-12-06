@@ -1,0 +1,22 @@
+{
+  "replace": false,
+  "values": [
+    "fuchsiaworks_morecraft:glass_fence",
+    "fuchsiaworks_morecraft:black_stained_glass_fence",
+    "fuchsiaworks_morecraft:blue_stained_glass_fence",
+    "fuchsiaworks_morecraft:brown_stained_glass_fence",
+    "fuchsiaworks_morecraft:cyan_stained_glass_fence",
+    "fuchsiaworks_morecraft:gray_stained_glass_fence",
+    "fuchsiaworks_morecraft:green_stained_glass_fence",
+    "fuchsiaworks_morecraft:light_blue_stained_glass_fence",
+    "fuchsiaworks_morecraft:light_gray_stained_glass_fence",
+    "fuchsiaworks_morecraft:lime_stained_glass_fence",
+    "fuchsiaworks_morecraft:magenta_stained_glass_fence",
+    "fuchsiaworks_morecraft:pink_stained_glass_fence",
+    "fuchsiaworks_morecraft:purple_stained_glass_fence",
+    "fuchsiaworks_morecraft:red_stained_glass_fence",
+    "fuchsiaworks_morecraft:orange_stained_glass_fence",
+    "fuchsiaworks_morecraft:white_stained_glass_fence",
+    "fuchsiaworks_morecraft:yellow_stained_glass_fence"
+  ]
+}

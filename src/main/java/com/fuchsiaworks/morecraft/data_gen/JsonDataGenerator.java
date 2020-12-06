@@ -10,6 +10,7 @@ import com.fuchsiaworks.morecraft.MoreCraft;
 import com.fuchsiaworks.morecraft.block.Blocks;
 import com.fuchsiaworks.morecraft.item.Items;
 import com.fuchsiaworks.morecraft.recipe.Recipes;
+import com.fuchsiaworks.morecraft.tag.Tags;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
@@ -39,7 +40,7 @@ public class JsonDataGenerator extends BaseDataGenerator {
 
 			return this;
 		}
-		
+
 		public void generate(DataGenerator generator) {
 			generator.addProvider(bind(generator));
 		}
@@ -58,34 +59,34 @@ public class JsonDataGenerator extends BaseDataGenerator {
 			IDataProvider.save(gson, cache, jsonSupplier.get(), path);
 		}
 	}
-	
+
 	public static void generateItemModelJson(DataGenerator generator, Item item, String prefix) {
 		String id = item.getRegistryName().getPath();
-		
+
 		new JsonDataProvider(JsonDataGenerator.ASSETS_MODELS_ITEM_PATH + id + ".json", () -> {
 			return JsonBuilder.newObject((json) -> {
-				if(prefix == "item") {
+				if (prefix == "item") {
 					json.add("parent", "minecraft:item/generated");
 					json.addObject("textures", (textures) -> {
 						textures.add("layer0", MoreCraft.MOD_ID + ":" + prefix + "/" + id);
 					});
-				}
-				else {
+				} else {
 					json.add("parent", MoreCraft.MOD_ID + ":" + prefix + "/" + id);
 				}
 			}).build();
 		}).generate(generator);
 	}
-	
+
 	public static void generateItemModelJson(DataGenerator generator, Item item) {
 		generateItemModelJson(generator, item, "item");
 	}
-	
+
 	public static void generateBlockItemModelJson(DataGenerator generator, Item item) {
 		generateItemModelJson(generator, item, "block");
 	}
-	
-	public static void generateBasicCraftingBlockRecipe(DataGenerator generator, String name, String craftingType, ItemStack inputItem, List<ItemStack> resultItems, int hits) {
+
+	public static void generateBasicCraftingBlockRecipe(DataGenerator generator, String name, String craftingType,
+			ItemStack inputItem, List<ItemStack> resultItems, int hits) {
 		new JsonDataGenerator.JsonDataProvider(DATA_RECIPES_PATH + name + ".json", () -> {
 			return JsonBuilder.newObject((json) -> {
 				json.add("type", MoreCraft.MOD_ID + ":basic_crafting_block");
@@ -95,7 +96,7 @@ public class JsonDataGenerator extends BaseDataGenerator {
 					ingredient.add("count", inputItem.getCount());
 				});
 				json.addArray("results", (results) -> {
-					for(ItemStack resultItem : resultItems) {
+					for (ItemStack resultItem : resultItems) {
 						results.addObject((result) -> {
 							result.add("item", resultItem.getItem().getRegistryName().toString());
 							result.add("count", resultItem.getCount());
@@ -104,7 +105,8 @@ public class JsonDataGenerator extends BaseDataGenerator {
 				});
 				json.add("hits", hits);
 			}).build();
-		}).generate(generator);;
+		}).generate(generator);
+		;
 	}
 
 	public static void onGatherData(GatherDataEvent event) {
@@ -112,6 +114,7 @@ public class JsonDataGenerator extends BaseDataGenerator {
 
 		Blocks.onGatherJsonData(generator);
 		Items.onGatherJsonData(generator);
+		Tags.onGatherJsonData(generator);
 		Recipes.onGatherJsonData(generator);
 	}
 }

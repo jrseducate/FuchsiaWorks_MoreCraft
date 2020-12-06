@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:orange_dye"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/jungle_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/jungle_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/jungle_fence"
+    }
+  ],
+  "result": {
+    "item": "fuchsiaworks_morecraft:jungle_planks_orange_tinted_trapdoor",
+    "count": 3
+  }
+}

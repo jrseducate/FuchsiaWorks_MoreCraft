@@ -1,0 +1,7 @@
+{
+  "parent": "fuchsiaworks_morecraft:block/fence_post_tint",
+  "textures": {
+    "texture": "minecraft:block/crimson_planks",
+    "tint": "fuchsiaworks_morecraft:block/tint_light_blue"
+  }
+}

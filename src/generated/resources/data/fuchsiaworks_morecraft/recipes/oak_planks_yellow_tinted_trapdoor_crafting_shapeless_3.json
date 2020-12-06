@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:yellow_dye"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/oak_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/oak_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/oak_fence"
+    }
+  ],
+  "result": {
+    "item": "fuchsiaworks_morecraft:oak_planks_yellow_tinted_trapdoor",
+    "count": 3
+  }
+}

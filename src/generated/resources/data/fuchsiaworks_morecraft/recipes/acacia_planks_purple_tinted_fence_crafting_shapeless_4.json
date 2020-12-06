@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:purple_dye"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/acacia_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/acacia_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/acacia_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/acacia_fence"
+    }
+  ],
+  "result": {
+    "item": "fuchsiaworks_morecraft:acacia_planks_purple_tinted_fence",
+    "count": 4
+  }
+}

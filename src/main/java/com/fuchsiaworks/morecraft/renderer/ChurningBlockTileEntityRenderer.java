@@ -41,7 +41,7 @@ public class ChurningBlockTileEntityRenderer<T extends TileEntity> extends TileE
 		TextureAtlasSprite sprite = minecraft.getAtlasSpriteGetter(PlayerContainer.LOCATION_BLOCKS_TEXTURE)
 				.apply(new ResourceLocation("block/oak_planks"));
 		IVertexBuilder renderer = buffer.getBuffer(RenderType.getSolid());
-		
+
 		float bobbing = (float) (((Math.sin((progress * 0.2f) + (Math.PI * 1.5f)) + 1) / 2) * 0.35f);
 		Vector3f size = new Vector3f(0.15f, 0.9f, 0.15f);
 		Vector3f position = new Vector3f(0.5f - (size.x / 2), 0.7f - bobbing, 0.5f - (size.z / 2));
@@ -59,11 +59,6 @@ public class ChurningBlockTileEntityRenderer<T extends TileEntity> extends TileE
 		size.bindBuffer();
 		uv.bindBuffer();
 
-		float uMin = 1.0f;
-		float vMin = 1.0f;
-		float uMax = 0.95f;
-		float vMax = 0.95f;
-
 		// XZ Y-
 		add(renderer, stack, position.add(size.get(0, 0, 0)), uv.get(0, 0));
 		add(renderer, stack, position.add(size.get(1, 0, 0)), uv.get(0, 1));
@@ -75,11 +70,6 @@ public class ChurningBlockTileEntityRenderer<T extends TileEntity> extends TileE
 		add(renderer, stack, position.add(size.get(0, 1, 1)), uv.get(0, 1));
 		add(renderer, stack, position.add(size.get(1, 1, 1)), uv.get(1, 1));
 		add(renderer, stack, position.add(size.get(1, 1, 0)), uv.get(1, 0));
-
-		uMin = 1.0f;
-		vMin = 1.0f;
-		uMax = 0.85f;
-		vMax = 1.0f;
 
 		// YZ X-
 		add(renderer, stack, position.add(size.get(0, 0, 0)), uv.get(0, 0));

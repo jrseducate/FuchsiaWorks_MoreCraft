@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:pink_dye"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/jungle_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/jungle_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/jungle_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/jungle_fence"
+    }
+  ],
+  "result": {
+    "item": "fuchsiaworks_morecraft:jungle_planks_pink_tinted_trapdoor",
+    "count": 4
+  }
+}

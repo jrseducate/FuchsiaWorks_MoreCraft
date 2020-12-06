@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:pink_dye"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/oak_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/oak_fence"
+    }
+  ],
+  "result": {
+    "item": "fuchsiaworks_morecraft:oak_planks_pink_tinted_trapdoor",
+    "count": 2
+  }
+}

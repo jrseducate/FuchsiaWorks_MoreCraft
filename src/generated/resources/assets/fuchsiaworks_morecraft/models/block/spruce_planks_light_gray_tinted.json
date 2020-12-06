@@ -2,6 +2,6 @@
   "parent": "fuchsiaworks_morecraft:block/cube_all_tint",
   "textures": {
     "all": "minecraft:block/spruce_planks",
-    "tint": "fuchsiaworks_morecraft:block/light_gray_tint"
+    "tint": "fuchsiaworks_morecraft:block/tint_light_gray"
   }
 }

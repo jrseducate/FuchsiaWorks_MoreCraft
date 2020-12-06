@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:light_gray_dye"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/spruce_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/spruce_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/spruce_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/spruce_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/spruce_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/spruce_fence"
+    }
+  ],
+  "result": {
+    "item": "fuchsiaworks_morecraft:spruce_planks_light_gray_tinted_fence",
+    "count": 6
+  }
+}

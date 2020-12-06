@@ -1,0 +1,7 @@
+{
+  "parent": "fuchsiaworks_morecraft:block/fence_side_tint",
+  "textures": {
+    "texture": "minecraft:block/oak_planks",
+    "tint": "fuchsiaworks_morecraft:block/tint_gray"
+  }
+}

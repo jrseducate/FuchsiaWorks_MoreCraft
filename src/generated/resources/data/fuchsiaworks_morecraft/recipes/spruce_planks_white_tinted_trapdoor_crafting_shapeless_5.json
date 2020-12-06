@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:white_dye"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/spruce_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/spruce_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/spruce_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/spruce_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/spruce_fence"
+    }
+  ],
+  "result": {
+    "item": "fuchsiaworks_morecraft:spruce_planks_white_tinted_trapdoor",
+    "count": 5
+  }
+}

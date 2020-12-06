@@ -28,12 +28,12 @@ public class Sounds {
 					.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "entity.warlock.throw"));
 
 	public static void RegisterSounds(Register<SoundEvent> soundRegistryEvent) {
-//		soundRegistryEvent.getRegistry().register(ENTITY_WARLOCK_AMBIENT);
-//		soundRegistryEvent.getRegistry().register(ENTITY_WARLOCK_CELEBRATE);
-//		soundRegistryEvent.getRegistry().register(ENTITY_WARLOCK_DEATH);
-//		soundRegistryEvent.getRegistry().register(ENTITY_WARLOCK_DRINK);
-//		soundRegistryEvent.getRegistry().register(ENTITY_WARLOCK_HURT);
-//		soundRegistryEvent.getRegistry().register(ENTITY_WARLOCK_THROW);
+		// soundRegistryEvent.getRegistry().register(ENTITY_WARLOCK_AMBIENT);
+		// soundRegistryEvent.getRegistry().register(ENTITY_WARLOCK_CELEBRATE);
+		// soundRegistryEvent.getRegistry().register(ENTITY_WARLOCK_DEATH);
+		// soundRegistryEvent.getRegistry().register(ENTITY_WARLOCK_DRINK);
+		// soundRegistryEvent.getRegistry().register(ENTITY_WARLOCK_HURT);
+		// soundRegistryEvent.getRegistry().register(ENTITY_WARLOCK_THROW);
 	}
 
 }

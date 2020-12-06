@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:white_dye"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/birch_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/birch_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/birch_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/birch_fence"
+    }
+  ],
+  "result": {
+    "item": "fuchsiaworks_morecraft:birch_planks_white_tinted_fence",
+    "count": 4
+  }
+}

@@ -92,6 +92,7 @@ public class MoreCraft {
 		public static void onBlocksRegistry(final RegistryEvent.Register<Block> blockRegistryEvent) {
 			LOGGER.info("Registering Blocks");
 
+			Blocks.InitBlocks();
 			Blocks.RegisterBlocks(blockRegistryEvent);
 		}
 
@@ -99,6 +100,7 @@ public class MoreCraft {
 		public static void onItemsRegistry(final RegistryEvent.Register<Item> itemRegistryEvent) {
 			LOGGER.info("Registering Items");
 
+			Items.InitItems();
 			Items.RegisterItems(itemRegistryEvent);
 		}
 
@@ -164,7 +166,8 @@ public class MoreCraft {
 				// Register Entity Spawners
 				// func_242575_a(Entity Classification, new Spawners(Entity
 				// Type, Spawn Chance Weight, Minimum Spawned, Maximum Spawned))
-				//event.getSpawns().func_242575_a(EntityClassification.MONSTER, new Spawners(Entities.WARLOCK, 1, 1, 1));
+				// event.getSpawns().func_242575_a(EntityClassification.MONSTER,
+				// new Spawners(Entities.WARLOCK, 1, 1, 1));
 			}
 		}
 

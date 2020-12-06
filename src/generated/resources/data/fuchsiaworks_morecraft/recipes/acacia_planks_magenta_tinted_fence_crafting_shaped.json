@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "xyx",
+    "xyx"
+  ],
+  "key": {
+    "x": {
+      "item": "fuchsiaworks_morecraft:acacia_planks_magenta_tinted"
+    },
+    "y": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "fuchsiaworks_morecraft:acacia_planks_magenta_tinted_fence",
+    "count": 6
+  }
+}

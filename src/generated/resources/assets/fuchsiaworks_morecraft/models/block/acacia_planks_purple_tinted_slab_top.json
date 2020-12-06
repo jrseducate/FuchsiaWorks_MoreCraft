@@ -4,6 +4,6 @@
     "bottom": "minecraft:block/acacia_planks",
     "top": "minecraft:block/acacia_planks",
     "side": "minecraft:block/acacia_planks",
-    "tint": "fuchsiaworks_morecraft:block/purple_tint"
+    "tint": "fuchsiaworks_morecraft:block/tint_purple"
   }
 }

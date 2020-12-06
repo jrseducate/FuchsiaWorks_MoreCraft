@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:cyan_dye"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/acacia_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/acacia_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/acacia_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/acacia_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/acacia_fence"
+    }
+  ],
+  "result": {
+    "item": "fuchsiaworks_morecraft:acacia_planks_cyan_tinted_fence",
+    "count": 5
+  }
+}

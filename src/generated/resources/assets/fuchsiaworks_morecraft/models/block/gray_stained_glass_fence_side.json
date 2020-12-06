@@ -1,0 +1,6 @@
+{
+  "parent": "fuchsiaworks_morecraft:block/glass_fence_side",
+  "textures": {
+    "texture": "minecraft:block/gray_stained_glass"
+  }
+}

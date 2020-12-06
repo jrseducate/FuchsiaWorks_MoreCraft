@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:black_dye"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/birch_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/birch_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/birch_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/birch_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/birch_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/birch_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/birch_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/birch_fence"
+    }
+  ],
+  "result": {
+    "item": "fuchsiaworks_morecraft:birch_planks_black_tinted_fence",
+    "count": 8
+  }
+}

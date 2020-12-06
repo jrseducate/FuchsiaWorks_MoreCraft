@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:brown_dye"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/birch_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/birch_fence"
+    }
+  ],
+  "result": {
+    "item": "fuchsiaworks_morecraft:birch_planks_brown_tinted_trapdoor",
+    "count": 2
+  }
+}

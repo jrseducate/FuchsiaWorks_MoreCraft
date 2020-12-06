@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:black_dye"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/acacia_trapdoor"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/acacia_trapdoor"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/acacia_trapdoor"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/acacia_trapdoor"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/acacia_trapdoor"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/acacia_trapdoor"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/acacia_trapdoor"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/acacia_trapdoor"
+    }
+  ],
+  "result": {
+    "item": "fuchsiaworks_morecraft:acacia_planks_black_tinted_trapdoor",
+    "count": 8
+  }
+}

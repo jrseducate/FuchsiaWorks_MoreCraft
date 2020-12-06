@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:orange_dye"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/dark_oak_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/dark_oak_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/dark_oak_fence"
+    }
+  ],
+  "result": {
+    "item": "fuchsiaworks_morecraft:dark_oak_planks_orange_tinted_trapdoor",
+    "count": 3
+  }
+}

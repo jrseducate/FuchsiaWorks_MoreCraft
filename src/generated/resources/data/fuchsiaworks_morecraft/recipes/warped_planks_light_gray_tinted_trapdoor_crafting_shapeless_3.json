@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:light_gray_dye"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/warped_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/warped_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/warped_fence"
+    }
+  ],
+  "result": {
+    "item": "fuchsiaworks_morecraft:warped_planks_light_gray_tinted_trapdoor",
+    "count": 3
+  }
+}

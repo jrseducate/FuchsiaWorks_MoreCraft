@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "xxx",
+    "xxx"
+  ],
+  "key": {
+    "x": {
+      "item": "fuchsiaworks_morecraft:acacia_planks_magenta_tinted"
+    }
+  },
+  "result": {
+    "item": "fuchsiaworks_morecraft:acacia_planks_magenta_tinted_trapdoor",
+    "count": 2
+  }
+}

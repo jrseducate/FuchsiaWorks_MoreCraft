@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:orange_dye"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/acacia_trapdoor"
+    }
+  ],
+  "result": {
+    "item": "fuchsiaworks_morecraft:acacia_planks_orange_tinted_trapdoor",
+    "count": 1
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:yellow_dye"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/acacia_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/acacia_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/acacia_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/acacia_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/acacia_fence"
+    }
+  ],
+  "result": {
+    "item": "fuchsiaworks_morecraft:acacia_planks_yellow_tinted_fence",
+    "count": 5
+  }
+}

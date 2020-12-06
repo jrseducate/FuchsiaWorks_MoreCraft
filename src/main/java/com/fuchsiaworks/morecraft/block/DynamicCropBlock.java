@@ -51,122 +51,123 @@ public class DynamicCropBlock extends CropsBlock {
 	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
 		return this.shapes[state.get(this.getAgeProperty())];
 	}
-	
+
 	public String getStage(String stageIdTemplate, int stage) {
 		return stageIdTemplate.replace("{stage}", Integer.toString(stage));
 	}
-	
+
 	public void generateJson(DataGenerator generator, String stageIdTemplate) {
 		generateBlockJson(generator, stageIdTemplate);
 		generateBlockLootTableJson(generator);
 	}
-	
+
 	public void generateBlockJson(DataGenerator generator, String stageIdTemplate) {
 		String id = getRegistryName().getPath();
-		
+
 		generator.addProvider(new JsonDataProvider(JsonDataGenerator.ASSETS_BLOCKSTATES_PATH + id + ".json", () -> {
 			return JsonBuilder.newObject((json) -> {
 				json.addObject("variants", (variants) -> {
-					for(int i = 0; i <= getMaxAge(); i++) {
+					for (int i = 0; i <= getMaxAge(); i++) {
 						String stageId = getStage(stageIdTemplate, i);
-						
+
 						variants.addObject("age=" + i, (variant) -> {
 							variant.add("model", MoreCraft.MOD_ID + ":block/" + stageId);
 						});
 					}
 				});
-				
+
 			}).build();
 		}).bind(generator));
 
-
-		for(int i = 0; i <= getMaxAge(); i++) {
+		for (int i = 0; i <= getMaxAge(); i++) {
 			final String stageId = getStage(stageIdTemplate, i);
-			
-			generator.addProvider(new JsonDataProvider(JsonDataGenerator.ASSETS_MODELS_BLOCK_PATH + stageId + ".json", () -> {
-				return JsonBuilder.newObject((json) -> {
-					json.add("parent", "minecraft:block/crop");
-					json.addObject("textures", (textures) -> {
-						textures.add("crop", MoreCraft.MOD_ID + ":block/" + stageId);
-					});
-				}).build();
-			}).bind(generator));
+
+			generator.addProvider(
+					new JsonDataProvider(JsonDataGenerator.ASSETS_MODELS_BLOCK_PATH + stageId + ".json", () -> {
+						return JsonBuilder.newObject((json) -> {
+							json.add("parent", "minecraft:block/crop");
+							json.addObject("textures", (textures) -> {
+								textures.add("crop", MoreCraft.MOD_ID + ":block/" + stageId);
+							});
+						}).build();
+					}).bind(generator));
 		}
 	}
-	
+
 	public void generateBlockLootTableJson(DataGenerator generator) {
 		String id = getRegistryName().getPath();
 		String name = MoreCraft.MOD_ID + ":" + id;
 		String maxAge = Integer.toString(getMaxAge());
-		
-		generator.addProvider(new JsonDataProvider(JsonDataGenerator.DATA_LOOT_TABLES_BLOCKS_PATH + id + ".json", () -> {
-			return JsonBuilder.newObject((json) -> {
-				json.add("type", "minecraft:block");
-				json.addArray("pools", (pools) -> {
-					pools.addObject((pool) -> {
-						pool.add("rolls", 1.0f);
-						pool.addArray("entries", (entries) -> {
-							entries.addObject((entry) -> {
-								entry.add("type", "minecraft:alternatives");
-								entry.addArray("children", (children) -> {
-									children.addObject((child) -> {
-										child.add("type", "minecraft:item");
-										child.addArray("conditions", (conditions) -> {
-											conditions.addObject((condition) -> {
-												condition.add("condition", "minecraft:block_state_property");
-												condition.add("block", name);
-												condition.addObject("properties", (properties) -> {
-													properties.add("age", maxAge);
+
+		generator
+				.addProvider(new JsonDataProvider(JsonDataGenerator.DATA_LOOT_TABLES_BLOCKS_PATH + id + ".json", () -> {
+					return JsonBuilder.newObject((json) -> {
+						json.add("type", "minecraft:block");
+						json.addArray("pools", (pools) -> {
+							pools.addObject((pool) -> {
+								pool.add("rolls", 1.0f);
+								pool.addArray("entries", (entries) -> {
+									entries.addObject((entry) -> {
+										entry.add("type", "minecraft:alternatives");
+										entry.addArray("children", (children) -> {
+											children.addObject((child) -> {
+												child.add("type", "minecraft:item");
+												child.addArray("conditions", (conditions) -> {
+													conditions.addObject((condition) -> {
+														condition.add("condition", "minecraft:block_state_property");
+														condition.add("block", name);
+														condition.addObject("properties", (properties) -> {
+															properties.add("age", maxAge);
+														});
+													});
+												});
+												child.add("name", name);
+											});
+											children.addObject((child) -> {
+												child.add("type", "minecraft:item");
+												child.add("name", name);
+											});
+										});
+									});
+								});
+							});
+							pools.addObject((pool) -> {
+								pool.add("rolls", 1.0f);
+								pool.addArray("entries", (entries) -> {
+									entries.addObject((entry) -> {
+										entry.add("type", "minecraft:item");
+										entry.addArray("functions", (functions) -> {
+											functions.addObject((function) -> {
+												function.add("function", "minecraft:apply_bonus");
+												function.add("enchantment", "minecraft:fortune");
+												function.add("formula", "minecraft:binomial_with_bonus_count");
+												function.addObject("parameters", (parameters) -> {
+													parameters.add("extra", 3);
+													parameters.add("probability", 0.5714286);
 												});
 											});
 										});
-										child.add("name", name);
-									});
-									children.addObject((child) -> {
-										child.add("type", "minecraft:item");
-										child.add("name", name);
+										entry.add("name", name);
 									});
 								});
-							});
-						});
-					});
-					pools.addObject((pool) -> {
-						pool.add("rolls", 1.0f);
-						pool.addArray("entries", (entries) -> {
-							entries.addObject((entry) -> {
-								entry.add("type", "minecraft:item");
-								entry.addArray("functions", (functions) -> {
-									functions.addObject((function) -> {
-										function.add("function", "minecraft:apply_bonus");
-										function.add("enchantment", "minecraft:fortune");
-										function.add("formula", "minecraft:binomial_with_bonus_count");
-										function.addObject("parameters", (parameters) -> {
-											parameters.add("extra", 3);
-											parameters.add("probability", 0.5714286);
+								pool.addArray("conditions", (conditions) -> {
+									conditions.addObject((condition) -> {
+										condition.add("condition", "minecraft:block_state_property");
+										condition.add("block", name);
+										condition.addObject("properties", (properties) -> {
+											properties.add("age", maxAge);
 										});
 									});
 								});
-								entry.add("name", name);
 							});
 						});
-						pool.addArray("conditions", (conditions) -> {
-							conditions.addObject((condition) -> {
-								condition.add("condition", "minecraft:block_state_property");
-								condition.add("block", name);
-								condition.addObject("properties", (properties) -> {
-									properties.add("age", maxAge);
-								});
+						json.addArray("functions", (functions) -> {
+							functions.addObject((function) -> {
+								function.add("function", "minecraft:explosion_decay");
 							});
 						});
-					});
-				});
-				json.addArray("functions", (functions) -> {
-					functions.addObject((function) -> {
-						function.add("function", "minecraft:explosion_decay");
-					});
-				});
-			}).build();
-		}).bind(generator));
+					}).build();
+				}).bind(generator));
 	}
 
 }

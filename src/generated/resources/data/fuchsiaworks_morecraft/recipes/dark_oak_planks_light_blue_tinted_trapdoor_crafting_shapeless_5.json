@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:light_blue_dye"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/dark_oak_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/dark_oak_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/dark_oak_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/dark_oak_fence"
+    },
+    {
+      "tag": "fuchsiaworks_morecraft:block/dark_oak_fence"
+    }
+  ],
+  "result": {
+    "item": "fuchsiaworks_morecraft:dark_oak_planks_light_blue_tinted_trapdoor",
+    "count": 5
+  }
+}

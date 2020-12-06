@@ -28,26 +28,6 @@ import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.fml.LogicalSide;
 
 public class Items {
-	public static Item GLASS_SLAB = new BlockItem(Blocks.GLASS_SLAB,
-			new Item.Properties().group(ItemGroup.BUILDING_BLOCKS))
-					.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "glass_slab"));
-
-	public static Item GLASS_STAIRS = new BlockItem(Blocks.GLASS_STAIRS,
-			new Item.Properties().group(ItemGroup.BUILDING_BLOCKS))
-					.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "glass_stairs"));
-
-	public static Item CHOPPING_BLOCK = new BlockItem(Blocks.CHOPPING_BLOCK,
-			new Item.Properties().group(ItemGroup.MISC))
-					.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "chopping_block"));
-
-	public static Item CHURNING_BLOCK = new BlockItem(Blocks.CHURNING_BLOCK,
-			new Item.Properties().group(ItemGroup.MISC))
-					.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "churning_block"));
-
-	public static Item CHOPPING_KNIFE = new SwordItem(ItemTier.WOOD, 3, -0.2F,
-			new Item.Properties().maxDamage(256).group(ItemGroup.COMBAT))
-					.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "chopping_knife"));
-	
 	public static Item REFERENCE_BUCKET = net.minecraft.item.Items.BUCKET;
 	public static Item REFERENCE_MILK_BUCKET = net.minecraft.item.Items.MILK_BUCKET;
 	public static Item REFERENCE_BEEF = net.minecraft.item.Items.BEEF;
@@ -69,121 +49,151 @@ public class Items {
 	public static Item REFERENCE_COOKED_SALMON = net.minecraft.item.Items.COOKED_SALMON;
 	public static Item REFERENCE_BAKED_POTATO = net.minecraft.item.Items.BAKED_POTATO;
 
-	public static Item CROP_ONION = new BlockItem(Blocks.CROP_ONION,
-			new Item.Properties().group(ItemGroup.FOOD).food(new Food.Builder().hunger(1).saturation(0.0f).build()))
-					.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "crop_onion"));
+	public static BlockItem GLASS_SLAB;
+	public static BlockItem GLASS_STAIRS;
+	public static BlockItem GLASS_DOOR;
+	public static BlockItem GLASS_FENCE;
+	public static BlockItem GLASS_TRAPDOOR;
 
-	public static Item CROP_BROCCOLI = new BlockItem(Blocks.CROP_BROCCOLI,
-			new Item.Properties().group(ItemGroup.FOOD).food(new Food.Builder().hunger(1).saturation(0.0f).build()))
-					.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "crop_broccoli"));
+	public static BlockItem CHOPPING_BLOCK;
+	public static BlockItem CHURNING_BLOCK;
+	public static Item CHOPPING_KNIFE;
 
-	public static Item CROP_RICE = new BlockItem(Blocks.CROP_RICE,
-			new Item.Properties().group(ItemGroup.FOOD).food(new Food.Builder().hunger(1).saturation(0.0f).build()))
-					.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "crop_rice"));
+	public static BlockItem CROP_ONION;
+	public static BlockItem CROP_BROCCOLI;
+	public static BlockItem CROP_RICE;
 
-	public static Item COOKED_EGG = new Item(new Item.Properties().group(ItemGroup.FOOD).maxStackSize(16)
-			.food(new Food.Builder().hunger(1).saturation(0.1f).build()))
-					.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "cooked_egg"));
+	public static Item COOKED_EGG;
+	public static Item COOKED_CARROT;
+	public static Item COOKED_BEETROOT;
 
-	public static Item COOKED_CARROT = new Item(
-			new Item.Properties().group(ItemGroup.FOOD).food(GetCookedFood(REFERENCE_CARROT)))
-					.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "cooked_carrot"));
+	public static Item BUTTER;
 
-	public static Item COOKED_BEETROOT = new Item(
-			new Item.Properties().group(ItemGroup.FOOD).food(GetCookedFood(REFERENCE_BEETROOT)))
-					.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "cooked_beetroot"));
+	public static Item BEEF_DICED;
+	public static Item CHICKEN_DICED;
+	public static Item COD_DICED;
+	public static Item MUTTON_DICED;
+	public static Item PORKCHOP_DICED;
+	public static Item RABBIT_DICED;
+	public static Item SALMON_DICED;
+	public static Item BEETROOT_DICED;
+	public static Item CARROT_DICED;
+	public static Item POTATO_DICED;
+	public static Item COOKED_BEEF_DICED;
+	public static Item COOKED_CHICKEN_DICED;
+	public static Item COOKED_COD_DICED;
+	public static Item COOKED_MUTTON_DICED;
+	public static Item COOKED_PORKCHOP_DICED;
+	public static Item COOKED_RABBIT_DICED;
+	public static Item COOKED_SALMON_DICED;
+	public static Item COOKED_BEETROOT_DICED;
+	public static Item COOKED_CARROT_DICED;
+	public static Item BAKED_POTATO_DICED;
+	public static Item CROP_ONION_DICED;
+	public static Item CROP_BROCCOLI_DICED;
 
-	public static Item BUTTER = new Item(new Item.Properties().group(ItemGroup.FOOD).food(MakeFood(2, 0.4f)))
-			.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "butter"));
+	public static void InitItems() {
+		CHOPPING_BLOCK = (BlockItem) new BlockItem(Blocks.CHOPPING_BLOCK, new Item.Properties().group(ItemGroup.MISC))
+				.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "chopping_block"));
+		CHURNING_BLOCK = (BlockItem) new BlockItem(Blocks.CHURNING_BLOCK, new Item.Properties().group(ItemGroup.MISC))
+				.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "churning_block"));
 
-	public static Item BEEF_DICED = new Item(
-			new Item.Properties().group(ItemGroup.FOOD).food(GetDicedFood(REFERENCE_BEEF)))
-					.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "beef_diced"));
+		GLASS_SLAB = (BlockItem) new BlockItem(Blocks.GLASS_SLAB,
+				new Item.Properties().group(ItemGroup.BUILDING_BLOCKS))
+						.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "glass_slab"));
+		GLASS_STAIRS = (BlockItem) new BlockItem(Blocks.GLASS_STAIRS,
+				new Item.Properties().group(ItemGroup.BUILDING_BLOCKS))
+						.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "glass_stairs"));
+		GLASS_DOOR = (BlockItem) new BlockItem(Blocks.GLASS_DOOR,
+				new Item.Properties().group(ItemGroup.BUILDING_BLOCKS))
+						.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "glass_door"));
+		GLASS_FENCE = (BlockItem) new BlockItem(Blocks.GLASS_FENCE,
+				new Item.Properties().group(ItemGroup.BUILDING_BLOCKS))
+						.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "glass_fence"));
+		GLASS_TRAPDOOR = (BlockItem) new BlockItem(Blocks.GLASS_TRAPDOOR,
+				new Item.Properties().group(ItemGroup.BUILDING_BLOCKS))
+						.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "glass_trapdoor"));
 
-	public static Item CHICKEN_DICED = new Item(
-			new Item.Properties().group(ItemGroup.FOOD).food(GetDicedFood(REFERENCE_CHICKEN)))
-					.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "chicken_diced"));
+		CHOPPING_KNIFE = new SwordItem(ItemTier.WOOD, 3, -0.2F,
+				new Item.Properties().maxDamage(256).group(ItemGroup.COMBAT))
+						.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "chopping_knife"));
 
-	public static Item COD_DICED = new Item(
-			new Item.Properties().group(ItemGroup.FOOD).food(GetDicedFood(REFERENCE_COD)))
-					.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "cod_diced"));
+		CROP_ONION = (BlockItem) new BlockItem(Blocks.CROP_ONION,
+				new Item.Properties().group(ItemGroup.FOOD).food(new Food.Builder().hunger(1).saturation(0.0f).build()))
+						.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "crop_onion"));
+		CROP_BROCCOLI = (BlockItem) new BlockItem(Blocks.CROP_BROCCOLI,
+				new Item.Properties().group(ItemGroup.FOOD).food(new Food.Builder().hunger(1).saturation(0.0f).build()))
+						.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "crop_broccoli"));
+		CROP_RICE = (BlockItem) new BlockItem(Blocks.CROP_RICE,
+				new Item.Properties().group(ItemGroup.FOOD).food(new Food.Builder().hunger(1).saturation(0.0f).build()))
+						.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "crop_rice"));
 
-	public static Item MUTTON_DICED = new Item(
-			new Item.Properties().group(ItemGroup.FOOD).food(GetDicedFood(REFERENCE_MUTTON)))
-					.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "mutton_diced"));
+		COOKED_EGG = new Item(new Item.Properties().group(ItemGroup.FOOD).maxStackSize(16)
+				.food(new Food.Builder().hunger(1).saturation(0.1f).build()))
+						.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "cooked_egg"));
+		COOKED_CARROT = new Item(new Item.Properties().group(ItemGroup.FOOD).food(GetCookedFood(REFERENCE_CARROT)))
+				.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "cooked_carrot"));
+		COOKED_BEETROOT = new Item(new Item.Properties().group(ItemGroup.FOOD).food(GetCookedFood(REFERENCE_BEETROOT)))
+				.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "cooked_beetroot"));
 
-	public static Item PORKCHOP_DICED = new Item(
-			new Item.Properties().group(ItemGroup.FOOD).food(GetDicedFood(REFERENCE_PORKCHOP)))
-					.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "porkchop_diced"));
+		BUTTER = new Item(new Item.Properties().group(ItemGroup.FOOD).food(MakeFood(2, 0.4f)))
+				.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "butter"));
 
-	public static Item RABBIT_DICED = new Item(
-			new Item.Properties().group(ItemGroup.FOOD).food(GetDicedFood(REFERENCE_RABBIT)))
-					.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "rabbit_diced"));
+		BEEF_DICED = new Item(new Item.Properties().group(ItemGroup.FOOD).food(GetDicedFood(REFERENCE_BEEF)))
+				.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "beef_diced"));
+		CHICKEN_DICED = new Item(new Item.Properties().group(ItemGroup.FOOD).food(GetDicedFood(REFERENCE_CHICKEN)))
+				.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "chicken_diced"));
+		COD_DICED = new Item(new Item.Properties().group(ItemGroup.FOOD).food(GetDicedFood(REFERENCE_COD)))
+				.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "cod_diced"));
+		MUTTON_DICED = new Item(new Item.Properties().group(ItemGroup.FOOD).food(GetDicedFood(REFERENCE_MUTTON)))
+				.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "mutton_diced"));
+		PORKCHOP_DICED = new Item(new Item.Properties().group(ItemGroup.FOOD).food(GetDicedFood(REFERENCE_PORKCHOP)))
+				.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "porkchop_diced"));
+		RABBIT_DICED = new Item(new Item.Properties().group(ItemGroup.FOOD).food(GetDicedFood(REFERENCE_RABBIT)))
+				.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "rabbit_diced"));
+		SALMON_DICED = new Item(new Item.Properties().group(ItemGroup.FOOD).food(GetDicedFood(REFERENCE_SALMON)))
+				.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "salmon_diced"));
+		BEETROOT_DICED = new Item(new Item.Properties().group(ItemGroup.FOOD).food(GetDicedFood(REFERENCE_BEETROOT)))
+				.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "beetroot_diced"));
+		CARROT_DICED = new Item(new Item.Properties().group(ItemGroup.FOOD).food(GetDicedFood(REFERENCE_CARROT)))
+				.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "carrot_diced"));
+		POTATO_DICED = new Item(new Item.Properties().group(ItemGroup.FOOD).food(GetDicedFood(REFERENCE_POTATO)))
+				.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "potato_diced"));
+		COOKED_BEEF_DICED = new Item(
+				new Item.Properties().group(ItemGroup.FOOD).food(GetDicedFood(REFERENCE_COOKED_BEEF)))
+						.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "cooked_beef_diced"));
+		COOKED_CHICKEN_DICED = new Item(
+				new Item.Properties().group(ItemGroup.FOOD).food(GetDicedFood(REFERENCE_COOKED_CHICKEN)))
+						.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "cooked_chicken_diced"));
+		COOKED_COD_DICED = new Item(
+				new Item.Properties().group(ItemGroup.FOOD).food(GetDicedFood(REFERENCE_COOKED_COD)))
+						.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "cooked_cod_diced"));
+		COOKED_MUTTON_DICED = new Item(
+				new Item.Properties().group(ItemGroup.FOOD).food(GetDicedFood(REFERENCE_COOKED_MUTTON)))
+						.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "cooked_mutton_diced"));
+		COOKED_PORKCHOP_DICED = new Item(
+				new Item.Properties().group(ItemGroup.FOOD).food(GetDicedFood(REFERENCE_COOKED_PORKCHOP)))
+						.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "cooked_porkchop_diced"));
+		COOKED_RABBIT_DICED = new Item(
+				new Item.Properties().group(ItemGroup.FOOD).food(GetDicedFood(REFERENCE_COOKED_RABBIT)))
+						.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "cooked_rabbit_diced"));
+		COOKED_SALMON_DICED = new Item(
+				new Item.Properties().group(ItemGroup.FOOD).food(GetDicedFood(REFERENCE_COOKED_SALMON)))
+						.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "cooked_salmon_diced"));
+		COOKED_BEETROOT_DICED = new Item(
+				new Item.Properties().group(ItemGroup.FOOD).food(GetDicedFood(COOKED_BEETROOT)))
+						.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "cooked_beetroot_diced"));
+		COOKED_CARROT_DICED = new Item(new Item.Properties().group(ItemGroup.FOOD).food(GetDicedFood(COOKED_CARROT)))
+				.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "cooked_carrot_diced"));
+		BAKED_POTATO_DICED = new Item(
+				new Item.Properties().group(ItemGroup.FOOD).food(GetDicedFood(REFERENCE_BAKED_POTATO)))
+						.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "baked_potato_diced"));
+		CROP_ONION_DICED = new Item(new Item.Properties().group(ItemGroup.FOOD).food(GetDicedFood(CROP_ONION)))
+				.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "crop_onion_diced"));
+		CROP_BROCCOLI_DICED = new Item(new Item.Properties().group(ItemGroup.FOOD).food(GetDicedFood(CROP_BROCCOLI)))
+				.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "crop_broccoli_diced"));
+	}
 
-	public static Item SALMON_DICED = new Item(
-			new Item.Properties().group(ItemGroup.FOOD).food(GetDicedFood(REFERENCE_SALMON)))
-					.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "salmon_diced"));
-
-	public static Item BEETROOT_DICED = new Item(
-			new Item.Properties().group(ItemGroup.FOOD).food(GetDicedFood(REFERENCE_BEETROOT)))
-					.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "beetroot_diced"));
-
-	public static Item CARROT_DICED = new Item(
-			new Item.Properties().group(ItemGroup.FOOD).food(GetDicedFood(REFERENCE_CARROT)))
-					.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "carrot_diced"));
-
-	public static Item POTATO_DICED = new Item(
-			new Item.Properties().group(ItemGroup.FOOD).food(GetDicedFood(REFERENCE_POTATO)))
-					.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "potato_diced"));
-
-	public static Item COOKED_BEEF_DICED = new Item(
-			new Item.Properties().group(ItemGroup.FOOD).food(GetDicedFood(REFERENCE_COOKED_BEEF)))
-					.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "cooked_beef_diced"));
-
-	public static Item COOKED_CHICKEN_DICED = new Item(
-			new Item.Properties().group(ItemGroup.FOOD).food(GetDicedFood(REFERENCE_COOKED_CHICKEN)))
-					.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "cooked_chicken_diced"));
-
-	public static Item COOKED_COD_DICED = new Item(
-			new Item.Properties().group(ItemGroup.FOOD).food(GetDicedFood(REFERENCE_COOKED_COD)))
-					.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "cooked_cod_diced"));
-
-	public static Item COOKED_MUTTON_DICED = new Item(
-			new Item.Properties().group(ItemGroup.FOOD).food(GetDicedFood(REFERENCE_COOKED_MUTTON)))
-					.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "cooked_mutton_diced"));
-
-	public static Item COOKED_PORKCHOP_DICED = new Item(
-			new Item.Properties().group(ItemGroup.FOOD).food(GetDicedFood(REFERENCE_COOKED_PORKCHOP)))
-					.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "cooked_porkchop_diced"));
-
-	public static Item COOKED_RABBIT_DICED = new Item(
-			new Item.Properties().group(ItemGroup.FOOD).food(GetDicedFood(REFERENCE_COOKED_RABBIT)))
-					.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "cooked_rabbit_diced"));
-
-	public static Item COOKED_SALMON_DICED = new Item(
-			new Item.Properties().group(ItemGroup.FOOD).food(GetDicedFood(REFERENCE_COOKED_SALMON)))
-					.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "cooked_salmon_diced"));
-
-	public static Item COOKED_BEETROOT_DICED = new Item(
-			new Item.Properties().group(ItemGroup.FOOD).food(GetDicedFood(COOKED_BEETROOT)))
-					.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "cooked_beetroot_diced"));
-
-	public static Item COOKED_CARROT_DICED = new Item(
-			new Item.Properties().group(ItemGroup.FOOD).food(GetDicedFood(COOKED_CARROT)))
-					.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "cooked_carrot_diced"));
-
-	public static Item BAKED_POTATO_DICED = new Item(
-			new Item.Properties().group(ItemGroup.FOOD).food(GetDicedFood(REFERENCE_BAKED_POTATO)))
-					.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "baked_potato_diced"));
-
-	public static Item CROP_ONION_DICED = new Item(
-			new Item.Properties().group(ItemGroup.FOOD).food(GetDicedFood(CROP_ONION)))
-					.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "crop_onion_diced"));
-
-	public static Item CROP_BROCCOLI_DICED = new Item(
-			new Item.Properties().group(ItemGroup.FOOD).food(GetDicedFood(CROP_BROCCOLI)))
-					.setRegistryName(new ResourceLocation(MoreCraft.MOD_ID, "crop_broccoli_diced"));
-	
 	public static void RegisterItems(final RegistryEvent.Register<Item> itemRegistryEvent) {
 		itemRegistryEvent.getRegistry().register(CHOPPING_KNIFE);
 
@@ -220,54 +230,76 @@ public class Items {
 		itemRegistryEvent.getRegistry().register(CROP_ONION_DICED);
 		itemRegistryEvent.getRegistry().register(CROP_BROCCOLI_DICED);
 
-		itemRegistryEvent.getRegistry().register(GLASS_SLAB);
-		itemRegistryEvent.getRegistry().register(GLASS_STAIRS);
-
 		itemRegistryEvent.getRegistry().register(CHOPPING_BLOCK);
 		itemRegistryEvent.getRegistry().register(CHURNING_BLOCK);
 
+		itemRegistryEvent.getRegistry().register(GLASS_SLAB);
+		itemRegistryEvent.getRegistry().register(GLASS_STAIRS);
+		// itemRegistryEvent.getRegistry().register(GLASS_DOOR);
+		itemRegistryEvent.getRegistry().register(GLASS_FENCE);
+		itemRegistryEvent.getRegistry().register(GLASS_TRAPDOOR);
+
 		Blocks.COLORED_GLASS_SLAB.registerItems(itemRegistryEvent);
 		Blocks.COLORED_GLASS_STAIRS.registerItems(itemRegistryEvent);
+		// Blocks.COLORED_GLASS_DOOR.registerItems(itemRegistryEvent);
+		Blocks.COLORED_GLASS_FENCE.registerItems(itemRegistryEvent);
+		Blocks.COLORED_GLASS_TRAPDOOR.registerItems(itemRegistryEvent);
 
 		Blocks.COLORED_ACACIA_PLANKS.registerItems(itemRegistryEvent);
 		Blocks.COLORED_ACACIA_SLAB.registerItems(itemRegistryEvent);
 		Blocks.COLORED_ACACIA_STAIRS.registerItems(itemRegistryEvent);
-//		Blocks.COLORED_ACACIA_DOOR.registerItems(itemRegistryEvent);
+		// Blocks.COLORED_ACACIA_DOOR.registerItems(itemRegistryEvent);
+		Blocks.COLORED_ACACIA_FENCE.registerItems(itemRegistryEvent);
+		Blocks.COLORED_ACACIA_TRAPDOOR.registerItems(itemRegistryEvent);
 
 		Blocks.COLORED_BIRCH_PLANKS.registerItems(itemRegistryEvent);
 		Blocks.COLORED_BIRCH_SLAB.registerItems(itemRegistryEvent);
 		Blocks.COLORED_BIRCH_STAIRS.registerItems(itemRegistryEvent);
-//		Blocks.COLORED_BIRCH_DOOR.registerItems(itemRegistryEvent);
+		// Blocks.COLORED_BIRCH_DOOR.registerItems(itemRegistryEvent);
+		Blocks.COLORED_BIRCH_FENCE.registerItems(itemRegistryEvent);
+		Blocks.COLORED_BIRCH_TRAPDOOR.registerItems(itemRegistryEvent);
 
 		Blocks.COLORED_DARK_OAK_PLANKS.registerItems(itemRegistryEvent);
 		Blocks.COLORED_DARK_OAK_SLAB.registerItems(itemRegistryEvent);
 		Blocks.COLORED_DARK_OAK_STAIRS.registerItems(itemRegistryEvent);
-//		Blocks.COLORED_DARK_OAK_DOOR.registerItems(itemRegistryEvent);
+		// Blocks.COLORED_DARK_OAK_DOOR.registerItems(itemRegistryEvent);
+		Blocks.COLORED_DARK_OAK_FENCE.registerItems(itemRegistryEvent);
+		Blocks.COLORED_DARK_OAK_TRAPDOOR.registerItems(itemRegistryEvent);
 
 		Blocks.COLORED_JUNGLE_PLANKS.registerItems(itemRegistryEvent);
 		Blocks.COLORED_JUNGLE_SLAB.registerItems(itemRegistryEvent);
 		Blocks.COLORED_JUNGLE_STAIRS.registerItems(itemRegistryEvent);
-//		Blocks.COLORED_JUNGLE_DOOR.registerItems(itemRegistryEvent);
+		// Blocks.COLORED_JUNGLE_DOOR.registerItems(itemRegistryEvent);
+		Blocks.COLORED_JUNGLE_FENCE.registerItems(itemRegistryEvent);
+		Blocks.COLORED_JUNGLE_TRAPDOOR.registerItems(itemRegistryEvent);
 
 		Blocks.COLORED_OAK_PLANKS.registerItems(itemRegistryEvent);
 		Blocks.COLORED_OAK_SLAB.registerItems(itemRegistryEvent);
 		Blocks.COLORED_OAK_STAIRS.registerItems(itemRegistryEvent);
-//		Blocks.COLORED_OAK_DOOR.registerItems(itemRegistryEvent);
+		// Blocks.COLORED_OAK_DOOR.registerItems(itemRegistryEvent);
+		Blocks.COLORED_OAK_FENCE.registerItems(itemRegistryEvent);
+		Blocks.COLORED_OAK_TRAPDOOR.registerItems(itemRegistryEvent);
 
 		Blocks.COLORED_SPRUCE_PLANKS.registerItems(itemRegistryEvent);
 		Blocks.COLORED_SPRUCE_SLAB.registerItems(itemRegistryEvent);
 		Blocks.COLORED_SPRUCE_STAIRS.registerItems(itemRegistryEvent);
-//		Blocks.COLORED_SPRUCE_DOOR.registerItems(itemRegistryEvent);
+		// Blocks.COLORED_SPRUCE_DOOR.registerItems(itemRegistryEvent);
+		Blocks.COLORED_SPRUCE_FENCE.registerItems(itemRegistryEvent);
+		Blocks.COLORED_SPRUCE_TRAPDOOR.registerItems(itemRegistryEvent);
 
 		Blocks.COLORED_CRIMSON_PLANKS.registerItems(itemRegistryEvent);
 		Blocks.COLORED_CRIMSON_SLAB.registerItems(itemRegistryEvent);
 		Blocks.COLORED_CRIMSON_STAIRS.registerItems(itemRegistryEvent);
-//		Blocks.COLORED_CRIMSON_DOOR.registerItems(itemRegistryEvent);
+		// Blocks.COLORED_CRIMSON_DOOR.registerItems(itemRegistryEvent);
+		Blocks.COLORED_CRIMSON_FENCE.registerItems(itemRegistryEvent);
+		Blocks.COLORED_CRIMSON_TRAPDOOR.registerItems(itemRegistryEvent);
 
 		Blocks.COLORED_WARPED_PLANKS.registerItems(itemRegistryEvent);
 		Blocks.COLORED_WARPED_SLAB.registerItems(itemRegistryEvent);
 		Blocks.COLORED_WARPED_STAIRS.registerItems(itemRegistryEvent);
-//		Blocks.COLORED_WARPED_DOOR.registerItems(itemRegistryEvent);
+		// Blocks.COLORED_WARPED_DOOR.registerItems(itemRegistryEvent);
+		Blocks.COLORED_WARPED_FENCE.registerItems(itemRegistryEvent);
+		Blocks.COLORED_WARPED_TRAPDOOR.registerItems(itemRegistryEvent);
 	}
 
 	public static Food GetCookedFood(Item itemFood) {
@@ -322,12 +354,9 @@ public class Items {
 	}
 
 	public static void onGatherJsonData(DataGenerator generator) {
-		JsonDataGenerator.generateBlockItemModelJson(generator, GLASS_SLAB);
-		JsonDataGenerator.generateBlockItemModelJson(generator, GLASS_STAIRS);
-
 		JsonDataGenerator.generateBlockItemModelJson(generator, CHOPPING_BLOCK);
 		JsonDataGenerator.generateBlockItemModelJson(generator, CHURNING_BLOCK);
-		
+
 		JsonDataGenerator.generateItemModelJson(generator, CHOPPING_KNIFE);
 
 		JsonDataGenerator.generateItemModelJson(generator, CROP_ONION);
@@ -337,7 +366,7 @@ public class Items {
 		JsonDataGenerator.generateItemModelJson(generator, COOKED_CARROT);
 		JsonDataGenerator.generateItemModelJson(generator, COOKED_BEETROOT);
 		JsonDataGenerator.generateItemModelJson(generator, BUTTER);
-		
+
 		JsonDataGenerator.generateItemModelJson(generator, BEEF_DICED);
 		JsonDataGenerator.generateItemModelJson(generator, CHICKEN_DICED);
 		JsonDataGenerator.generateItemModelJson(generator, COD_DICED);
@@ -360,196 +389,159 @@ public class Items {
 		JsonDataGenerator.generateItemModelJson(generator, BAKED_POTATO_DICED);
 		JsonDataGenerator.generateItemModelJson(generator, CROP_ONION_DICED);
 		JsonDataGenerator.generateItemModelJson(generator, CROP_BROCCOLI_DICED);
-		
+
 		Blocks.COLORED_GLASS_SLAB.generateItemsJson(generator);
 		Blocks.COLORED_GLASS_STAIRS.generateItemsJson(generator);
+		// Blocks.COLORED_GLASS_DOOR.generateItemsJson(generator);
+		Blocks.COLORED_GLASS_FENCE.generateItemsJson(generator);
+		Blocks.COLORED_GLASS_TRAPDOOR.generateItemsJson(generator);
 
 		Blocks.COLORED_ACACIA_PLANKS.generateItemsJson(generator);
 		Blocks.COLORED_ACACIA_SLAB.generateItemsJson(generator);
 		Blocks.COLORED_ACACIA_STAIRS.generateItemsJson(generator);
+		// Blocks.COLORED_ACACIA_DOOR.generateItemsJson(generator);
+		Blocks.COLORED_ACACIA_FENCE.generateItemsJson(generator);
+		Blocks.COLORED_ACACIA_TRAPDOOR.generateItemsJson(generator);
 
 		Blocks.COLORED_BIRCH_PLANKS.generateItemsJson(generator);
 		Blocks.COLORED_BIRCH_SLAB.generateItemsJson(generator);
 		Blocks.COLORED_BIRCH_STAIRS.generateItemsJson(generator);
+		Blocks.COLORED_BIRCH_DOOR.generateItemsJson(generator);
+		Blocks.COLORED_BIRCH_FENCE.generateItemsJson(generator);
+		Blocks.COLORED_BIRCH_TRAPDOOR.generateItemsJson(generator);
 
 		Blocks.COLORED_DARK_OAK_PLANKS.generateItemsJson(generator);
 		Blocks.COLORED_DARK_OAK_SLAB.generateItemsJson(generator);
 		Blocks.COLORED_DARK_OAK_STAIRS.generateItemsJson(generator);
+		// Blocks.COLORED_DARK_OAK_DOOR.generateItemsJson(generator);
+		Blocks.COLORED_DARK_OAK_FENCE.generateItemsJson(generator);
+		Blocks.COLORED_DARK_OAK_TRAPDOOR.generateItemsJson(generator);
 
 		Blocks.COLORED_JUNGLE_PLANKS.generateItemsJson(generator);
 		Blocks.COLORED_JUNGLE_SLAB.generateItemsJson(generator);
 		Blocks.COLORED_JUNGLE_STAIRS.generateItemsJson(generator);
+		// Blocks.COLORED_JUNGLE_DOOR.generateItemsJson(generator);
+		Blocks.COLORED_JUNGLE_FENCE.generateItemsJson(generator);
+		Blocks.COLORED_JUNGLE_TRAPDOOR.generateItemsJson(generator);
 
 		Blocks.COLORED_OAK_PLANKS.generateItemsJson(generator);
 		Blocks.COLORED_OAK_SLAB.generateItemsJson(generator);
 		Blocks.COLORED_OAK_STAIRS.generateItemsJson(generator);
+		// Blocks.COLORED_OAK_DOOR.generateItemsJson(generator);
+		Blocks.COLORED_OAK_FENCE.generateItemsJson(generator);
+		Blocks.COLORED_OAK_TRAPDOOR.generateItemsJson(generator);
 
 		Blocks.COLORED_SPRUCE_PLANKS.generateItemsJson(generator);
 		Blocks.COLORED_SPRUCE_SLAB.generateItemsJson(generator);
 		Blocks.COLORED_SPRUCE_STAIRS.generateItemsJson(generator);
+		// Blocks.COLORED_SPRUCE_DOOR.generateItemsJson(generator);
+		Blocks.COLORED_SPRUCE_FENCE.generateItemsJson(generator);
+		Blocks.COLORED_SPRUCE_TRAPDOOR.generateItemsJson(generator);
 
 		Blocks.COLORED_CRIMSON_PLANKS.generateItemsJson(generator);
 		Blocks.COLORED_CRIMSON_SLAB.generateItemsJson(generator);
 		Blocks.COLORED_CRIMSON_STAIRS.generateItemsJson(generator);
+		// Blocks.COLORED_CRIMSON_DOOR.generateItemsJson(generator);
+		Blocks.COLORED_CRIMSON_FENCE.generateItemsJson(generator);
+		Blocks.COLORED_CRIMSON_TRAPDOOR.generateItemsJson(generator);
 
 		Blocks.COLORED_WARPED_PLANKS.generateItemsJson(generator);
 		Blocks.COLORED_WARPED_SLAB.generateItemsJson(generator);
 		Blocks.COLORED_WARPED_STAIRS.generateItemsJson(generator);
+		// Blocks.COLORED_WARPED_DOOR.generateItemsJson(generator);
+		Blocks.COLORED_WARPED_FENCE.generateItemsJson(generator);
+		Blocks.COLORED_WARPED_TRAPDOOR.generateItemsJson(generator);
 	}
-	
+
 	public static void onGatherImageData(DataGenerator generator) {
-		//BEEF_DICED
-		ImageDataGenerator.generateItemImage(generator, ImageDataGenerator.IMAGE_TEMPLATE_DICED_FOOD, Items.BEEF_DICED,
-			new ImagePixel(71, 10, 6),
-			new ImagePixel(123, 23, 19),
-			new ImagePixel(224, 62, 53)
-		);
+		String dicedFoodPath = ImageDataGenerator.DATAGEN_IMAGES_PATH + "chopped_food.png";
 
-		//CHICKEN_DICED
-		ImageDataGenerator.generateItemImage(generator, ImageDataGenerator.IMAGE_TEMPLATE_DICED_FOOD, Items.CHICKEN_DICED,
-			new ImagePixel(134, 82, 69),
-			new ImagePixel(193, 146, 128),
-			new ImagePixel(242, 201, 189)
-		);
+		// BEEF_DICED
+		ImageDataGenerator.generateItemImage(generator, dicedFoodPath, Items.BEEF_DICED, new ImagePixel(71, 10, 6),
+				new ImagePixel(123, 23, 19), new ImagePixel(224, 62, 53));
 
-		//COD_DICED
-		ImageDataGenerator.generateItemImage(generator, ImageDataGenerator.IMAGE_TEMPLATE_DICED_FOOD, Items.COD_DICED,
-			new ImagePixel(107, 68, 43),
-			new ImagePixel(152, 109, 78),
-			new ImagePixel(214, 197, 173)
-		);
+		// CHICKEN_DICED
+		ImageDataGenerator.generateItemImage(generator, dicedFoodPath, Items.CHICKEN_DICED, new ImagePixel(134, 82, 69),
+				new ImagePixel(193, 146, 128), new ImagePixel(242, 201, 189));
 
-		//MUTTON_DICED
-		ImageDataGenerator.generateItemImage(generator, ImageDataGenerator.IMAGE_TEMPLATE_DICED_FOOD, Items.MUTTON_DICED,
-			new ImagePixel(71, 10, 6),
-			new ImagePixel(209, 46, 38),
-			new ImagePixel(232, 138, 130)
-		);
+		// COD_DICED
+		ImageDataGenerator.generateItemImage(generator, dicedFoodPath, Items.COD_DICED, new ImagePixel(107, 68, 43),
+				new ImagePixel(152, 109, 78), new ImagePixel(214, 197, 173));
 
-		//PORKCHOP_DICED
-		ImageDataGenerator.generateItemImage(generator, ImageDataGenerator.IMAGE_TEMPLATE_DICED_FOOD, Items.PORKCHOP_DICED,
-			new ImagePixel(81, 38, 38),
-			new ImagePixel(239, 112, 112),
-			new ImagePixel(255, 173, 173)
-		);
+		// MUTTON_DICED
+		ImageDataGenerator.generateItemImage(generator, dicedFoodPath, Items.MUTTON_DICED, new ImagePixel(71, 10, 6),
+				new ImagePixel(209, 46, 38), new ImagePixel(232, 138, 130));
 
-		//RABBIT_DICED
-		ImageDataGenerator.generateItemImage(generator, ImageDataGenerator.IMAGE_TEMPLATE_DICED_FOOD, Items.RABBIT_DICED,
-			new ImagePixel(134, 82, 69),
-			new ImagePixel(184, 132, 115),
-			new ImagePixel(254, 229, 210)
-		);
+		// PORKCHOP_DICED
+		ImageDataGenerator.generateItemImage(generator, dicedFoodPath, Items.PORKCHOP_DICED, new ImagePixel(81, 38, 38),
+				new ImagePixel(239, 112, 112), new ImagePixel(255, 173, 173));
 
-		//SALMON_DICED
-		ImageDataGenerator.generateItemImage(generator, ImageDataGenerator.IMAGE_TEMPLATE_DICED_FOOD, Items.SALMON_DICED,
-			new ImagePixel(27, 42, 38),
-			new ImagePixel(114, 53, 48),
-			new ImagePixel(144, 41, 40)
-		);
+		// RABBIT_DICED
+		ImageDataGenerator.generateItemImage(generator, dicedFoodPath, Items.RABBIT_DICED, new ImagePixel(134, 82, 69),
+				new ImagePixel(184, 132, 115), new ImagePixel(254, 229, 210));
 
-		//BEETROOT_DICED
-		ImageDataGenerator.generateItemImage(generator, ImageDataGenerator.IMAGE_TEMPLATE_DICED_FOOD, Items.BEETROOT_DICED,
-			new ImagePixel(91, 29, 23),
-			new ImagePixel(164, 39, 44),
-			new ImagePixel(192, 114, 121)
-		);
+		// SALMON_DICED
+		ImageDataGenerator.generateItemImage(generator, dicedFoodPath, Items.SALMON_DICED, new ImagePixel(27, 42, 38),
+				new ImagePixel(114, 53, 48), new ImagePixel(144, 41, 40));
 
-		//CARROT_DICED
-		ImageDataGenerator.generateItemImage(generator, ImageDataGenerator.IMAGE_TEMPLATE_DICED_FOOD, Items.CARROT_DICED,
-			new ImagePixel(117, 48, 2),
-			new ImagePixel(211, 106, 13),
-			new ImagePixel(255, 193, 119)
-		);
+		// BEETROOT_DICED
+		ImageDataGenerator.generateItemImage(generator, dicedFoodPath, Items.BEETROOT_DICED, new ImagePixel(91, 29, 23),
+				new ImagePixel(164, 39, 44), new ImagePixel(192, 114, 121));
 
-		//POTATO_DICED
-		ImageDataGenerator.generateItemImage(generator, ImageDataGenerator.IMAGE_TEMPLATE_DICED_FOOD, Items.POTATO_DICED,
-			new ImagePixel(109, 55, 1),
-			new ImagePixel(157, 119, 46),
-			new ImagePixel(248, 208, 134)
-		);
+		// CARROT_DICED
+		ImageDataGenerator.generateItemImage(generator, dicedFoodPath, Items.CARROT_DICED, new ImagePixel(117, 48, 2),
+				new ImagePixel(211, 106, 13), new ImagePixel(255, 193, 119));
 
-		//COOKED_BEEF_DICED
-		ImageDataGenerator.generateItemImage(generator, ImageDataGenerator.IMAGE_TEMPLATE_DICED_FOOD, Items.COOKED_BEEF_DICED,
-			new ImagePixel(42, 22, 13),
-			new ImagePixel(63, 33, 22),
-			new ImagePixel(124, 72, 53)
-		);
+		// POTATO_DICED
+		ImageDataGenerator.generateItemImage(generator, dicedFoodPath, Items.POTATO_DICED, new ImagePixel(109, 55, 1),
+				new ImagePixel(157, 119, 46), new ImagePixel(248, 208, 134));
 
-		//COOKED_CHICKEN_DICED
-		ImageDataGenerator.generateItemImage(generator, ImageDataGenerator.IMAGE_TEMPLATE_DICED_FOOD, Items.COOKED_CHICKEN_DICED,
-			new ImagePixel(90, 44, 16),
-			new ImagePixel(205, 125, 74),
-			new ImagePixel(230, 190, 164)
-		);
+		// COOKED_BEEF_DICED
+		ImageDataGenerator.generateItemImage(generator, dicedFoodPath, Items.COOKED_BEEF_DICED,
+				new ImagePixel(42, 22, 13), new ImagePixel(63, 33, 22), new ImagePixel(124, 72, 53));
 
-		//COOKED_COD_DICED
-		ImageDataGenerator.generateItemImage(generator, ImageDataGenerator.IMAGE_TEMPLATE_DICED_FOOD, Items.COOKED_COD_DICED,
-			new ImagePixel(152, 109, 78),
-			new ImagePixel(207, 184, 140),
-			new ImagePixel(226, 229, 198)
-		);
+		// COOKED_CHICKEN_DICED
+		ImageDataGenerator.generateItemImage(generator, dicedFoodPath, Items.COOKED_CHICKEN_DICED,
+				new ImagePixel(90, 44, 16), new ImagePixel(205, 125, 74), new ImagePixel(230, 190, 164));
 
-		//COOKED_MUTTON_DICED
-		ImageDataGenerator.generateItemImage(generator, ImageDataGenerator.IMAGE_TEMPLATE_DICED_FOOD, Items.COOKED_MUTTON_DICED,
-			new ImagePixel(42, 22, 13),
-			new ImagePixel(124, 64, 47),
-			new ImagePixel(163, 112, 90)
-		);
+		// COOKED_COD_DICED
+		ImageDataGenerator.generateItemImage(generator, dicedFoodPath, Items.COOKED_COD_DICED,
+				new ImagePixel(152, 109, 78), new ImagePixel(207, 184, 140), new ImagePixel(226, 229, 198));
 
-		//COOKED_PORKCHOP_DICED
-		ImageDataGenerator.generateItemImage(generator, ImageDataGenerator.IMAGE_TEMPLATE_DICED_FOOD, Items.COOKED_PORKCHOP_DICED,
-			new ImagePixel(95, 79, 39),
-			new ImagePixel(153, 121, 66),
-			new ImagePixel(226, 211, 172)
-		);
+		// COOKED_MUTTON_DICED
+		ImageDataGenerator.generateItemImage(generator, dicedFoodPath, Items.COOKED_MUTTON_DICED,
+				new ImagePixel(42, 22, 13), new ImagePixel(124, 64, 47), new ImagePixel(163, 112, 90));
 
-		//COOKED_RABBIT_DICED
-		ImageDataGenerator.generateItemImage(generator, ImageDataGenerator.IMAGE_TEMPLATE_DICED_FOOD, Items.COOKED_RABBIT_DICED,
-			new ImagePixel(89, 45, 20),
-			new ImagePixel(169, 95, 50),
-			new ImagePixel(231, 191, 162)
-		);
+		// COOKED_PORKCHOP_DICED
+		ImageDataGenerator.generateItemImage(generator, dicedFoodPath, Items.COOKED_PORKCHOP_DICED,
+				new ImagePixel(95, 79, 39), new ImagePixel(153, 121, 66), new ImagePixel(226, 211, 172));
 
-		//COOKED_SALMON_DICED
-		ImageDataGenerator.generateItemImage(generator, ImageDataGenerator.IMAGE_TEMPLATE_DICED_FOOD, Items.COOKED_SALMON_DICED,
-			new ImagePixel(27, 42, 38),
-			new ImagePixel(115, 61, 32),
-			new ImagePixel(223, 125, 83)
-		);
+		// COOKED_RABBIT_DICED
+		ImageDataGenerator.generateItemImage(generator, dicedFoodPath, Items.COOKED_RABBIT_DICED,
+				new ImagePixel(89, 45, 20), new ImagePixel(169, 95, 50), new ImagePixel(231, 191, 162));
 
-		//COOKED_BEETROOT_DICED
-		ImageDataGenerator.generateItemImage(generator, ImageDataGenerator.IMAGE_TEMPLATE_DICED_FOOD, Items.COOKED_BEETROOT_DICED,
-			new ImagePixel(68, 15, 10),
-			new ImagePixel(112, 43, 44),
-			new ImagePixel(126, 32, 36)
-		);
+		// COOKED_SALMON_DICED
+		ImageDataGenerator.generateItemImage(generator, dicedFoodPath, Items.COOKED_SALMON_DICED,
+				new ImagePixel(27, 42, 38), new ImagePixel(115, 61, 32), new ImagePixel(223, 125, 83));
 
-		//COOKED_CARROT_DICED
-		ImageDataGenerator.generateItemImage(generator, ImageDataGenerator.IMAGE_TEMPLATE_DICED_FOOD, Items.COOKED_CARROT_DICED,
-			new ImagePixel(117, 40, 2),
-			new ImagePixel(189, 89, 0),
-			new ImagePixel(220, 114, 21)
-		);
+		// COOKED_BEETROOT_DICED
+		ImageDataGenerator.generateItemImage(generator, dicedFoodPath, Items.COOKED_BEETROOT_DICED,
+				new ImagePixel(68, 15, 10), new ImagePixel(112, 43, 44), new ImagePixel(126, 32, 36));
 
-		//BAKED_POTATO_DICED
-		ImageDataGenerator.generateItemImage(generator, ImageDataGenerator.IMAGE_TEMPLATE_DICED_FOOD, Items.BAKED_POTATO_DICED,
-			new ImagePixel(109, 55, 1),
-			new ImagePixel(157, 119, 46),
-			new ImagePixel(240, 205, 90)
-		);
+		// COOKED_CARROT_DICED
+		ImageDataGenerator.generateItemImage(generator, dicedFoodPath, Items.COOKED_CARROT_DICED,
+				new ImagePixel(117, 40, 2), new ImagePixel(189, 89, 0), new ImagePixel(220, 114, 21));
 
-		//CROP_ONION_DICED
-		ImageDataGenerator.generateItemImage(generator, ImageDataGenerator.IMAGE_TEMPLATE_DICED_FOOD, Items.CROP_ONION_DICED,
-			new ImagePixel(137, 38, 105),
-			new ImagePixel(229, 192, 179),
-			new ImagePixel(245, 230, 209)
-		);
+		// BAKED_POTATO_DICED
+		ImageDataGenerator.generateItemImage(generator, dicedFoodPath, Items.BAKED_POTATO_DICED,
+				new ImagePixel(109, 55, 1), new ImagePixel(157, 119, 46), new ImagePixel(240, 205, 90));
 
-		//CROP_BROCCOLI_DICED
-		ImageDataGenerator.generateItemImage(generator, ImageDataGenerator.IMAGE_TEMPLATE_DICED_FOOD, Items.CROP_BROCCOLI_DICED,
-			new ImagePixel(28, 81, 31),
-			new ImagePixel(34, 143, 38),
-			new ImagePixel(85, 174, 89)
-		);
+		// CROP_ONION_DICED
+		ImageDataGenerator.generateItemImage(generator, dicedFoodPath, Items.CROP_ONION_DICED,
+				new ImagePixel(137, 38, 105), new ImagePixel(229, 192, 179), new ImagePixel(245, 230, 209));
+
+		// CROP_BROCCOLI_DICED
+		ImageDataGenerator.generateItemImage(generator, dicedFoodPath, Items.CROP_BROCCOLI_DICED,
+				new ImagePixel(28, 81, 31), new ImagePixel(34, 143, 38), new ImagePixel(85, 174, 89));
 	}
 }
